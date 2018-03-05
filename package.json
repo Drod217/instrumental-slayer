@@ -1,0 +1,26 @@
+{
+  "name": "instrumental-slayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drod217/instrumental-slayer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drod217/instrumental-slayer/issues"
+  },
+  "homepage": "https://github.com/Drod217/instrumental-slayer#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "msql": "^1.0.3",
+    "sequelize": "^4.35.2"
+  }
+}

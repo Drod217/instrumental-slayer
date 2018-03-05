@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
     "msql": "^1.0.3",
     "sequelize": "^4.35.2"
   }

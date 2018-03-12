@@ -20,7 +20,7 @@ var calcTempo = function (buffer) {
   var mt = new MusicTempo(audioData, p);
  
   console.log(mt.tempo);
-  console.log(mt.peakThreshold);
+  // console.log(mt.peakThreshold);
 //   console.log(mt.beats);
 //   console.log(mt.spectralFlux);
 //   console.log(mt.peaks);

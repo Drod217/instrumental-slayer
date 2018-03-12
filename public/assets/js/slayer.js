@@ -19,16 +19,16 @@ var calcTempo = function (buffer) {
   var p = { expiryTime: 30, maxBeatInterval: 1.5 };
   var mt = new MusicTempo(audioData, p);
  
-  console.log(mt.tempo);
-  console.log(mt.peakThreshold);
+  console.log("Tempo: " + mt.tempo);
+  console.log("Duration in seconds: "+ (length/2)/22090);
 //   console.log(mt.beats);
-//   console.log(mt.spectralFlux);
-//   console.log(mt.peaks);
+  // console.log(mt.spectralFlux);
+  // console.log(mt.peaks);
 //   console.log(mt.events);
 }
  
-// var data = fs.readFileSync("../audio/seinfeld.mp3");
 var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
+// var data = fs.readFileSync("../audio/seinfeld.mp3");
  
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);

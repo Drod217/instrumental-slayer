@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const burger = require("../models/slayer.js");
+const burger = require("/Users/David/BC/instrumental-slayer/public/assets/js/slayer.js");
 
 
 

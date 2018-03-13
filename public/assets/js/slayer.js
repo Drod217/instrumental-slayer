@@ -1,8 +1,12 @@
 var AudioContext = require("web-audio-api").AudioContext;
 var MusicTempo = require("music-tempo");
 var fs = require("fs");
+var tempo = 0;
+var duration = 0;
 // const audio = require("/assets/audio");
- 
+
+
+var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 var calcTempo = function (buffer) {
   var audioData = [];
   // Take the average of the two channels 
@@ -18,21 +22,26 @@ var calcTempo = function (buffer) {
   }
   var p = { expiryTime: 30, maxBeatInterval: 1.5 };
   var mt = new MusicTempo(audioData, p);
+  
  
+  tempo = mt.tempo;
+  duration = ((length/2)/22090);
   console.log("Tempo: " + mt.tempo);
-  console.log("Duration in seconds: "+ (length/2)/22090);
+  console.log(duration);
+  // console.log("Duration in seconds: "+ (length/2)/22090);
 //   console.log(mt.beats);
   // console.log(mt.spectralFlux);
   // console.log(mt.peaks);
 //   console.log(mt.events);
 }
  
-var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
+// var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 // var data = fs.readFileSync("../audio/seinfeld.mp3");
  
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
 
-
+console.log(tempo);
+console.log(duration);
 // console.log(context);
 

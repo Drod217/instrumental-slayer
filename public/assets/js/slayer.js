@@ -1,11 +1,11 @@
-  var AudioContext = require("web-audio-api").AudioContext;
+var AudioContext = require("web-audio-api").AudioContext;
 var MusicTempo = require("music-tempo");
 var fs = require("fs");
 var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
+var data = fs.readFileSync("../instrumental-slayer/public/assets/audio/01 Wake Me Up.m4a");
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
@@ -31,7 +31,7 @@ var calcTempo = function (buffer) {
   tempo = mt.tempo;
   duration = ((length/2)/22090);
   console.log("Tempo: " + mt.tempo);
-  console.log(duration);
+  console.log("Duration: " + duration);
   // console.log("Duration in seconds: "+ (length/2)/22090);
 //   console.log(mt.beats);
   // console.log(mt.spectralFlux);

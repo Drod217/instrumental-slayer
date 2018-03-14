@@ -24,8 +24,9 @@
     "method-override": "^2.3.10",
     "msql": "^1.0.3",
     "music-tempo": "^1.0.3",
+    "mysql2": "^1.5.2",
     "nodemon": "^1.17.1",
-    "sequelize": "^4.35.2",
+    "sequelize": "^4.36.1",
     "web-audio-api": "^0.2.2"
   }
 }

@@ -39,7 +39,7 @@ var calcTempo = function (buffer) {
 //   console.log(mt.events);
 }
 
-var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
+// var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 // var data = fs.readFileSync("../audio/seinfeld.mp3");
 
 var context = new AudioContext();

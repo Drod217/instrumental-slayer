@@ -4,12 +4,6 @@ var fs = require("fs");
 var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
-<<<<<<< HEAD
-var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
-// Spotify Widget Player
-// <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
-
-=======
 
 var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 
@@ -17,7 +11,6 @@ var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
 
 
->>>>>>> b7cb15f35cedbba9b5748825e306bd96767b8bee
 var calcTempo = function (buffer) {
   var audioData = [];
   // Take the average of the two channels
@@ -44,6 +37,7 @@ var calcTempo = function (buffer) {
   // console.log(mt.spectralFlux);
   // console.log(mt.peaks);
 //   console.log(mt.events);
+test(tempo, duration);
 }
 
 // var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
@@ -51,7 +45,11 @@ var calcTempo = function (buffer) {
 
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
-
-console.log(tempo);
+function test(x,y) {
+  HP = y * 2
+  return HP
+}
+test();
+console.log(HP);
 console.log(duration);
 // console.log(context);

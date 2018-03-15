@@ -26,3 +26,14 @@ CREATE TABLE 'class_abilities'
 	PRIMARY KEY (id)
 );
 
+//////////////////HANDLEBARS SCHEMA///////////////////////////
+
+the table is created dynamically in the char.js
+
+
+USE slayer_db;
+INSERT INTO chars (id, name, charClass, tempo, songLength, beats, charXP, charLevel, songURL, imageSRC, createdAt, updatedAt) VALUES
+("1", "Jack Black", "rogue", 292, 289, 67, 300, 2, "www.google.com", "./assets/img/player.jpg", current_date(), current_date()),
+("2", "Jill Hammer", "warrior", 382, 109, 97, 400, 3, "www.google.com", "./assets/img/enemy.jpg", current_date(), current_date())
+
+

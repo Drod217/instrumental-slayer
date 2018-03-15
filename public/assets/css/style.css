@@ -1,0 +1,65 @@
+.entire {
+    /* background: black; */
+}
+.is-link, .is-success {
+  color: black;
+  margin: 2px;
+  width: 90px;
+  font-size: 12px;
+}
+.tile {
+    background: transparent;
+    border-radius: 5px;
+}
+.player-img {
+  background-size: cover;
+  width: 100%;
+  background-image: url("../img/player.jpg");
+}
+.enemy-img {
+  background-size: cover;
+  width: 100%;
+  background-image: url("../img/enemy.jpg");
+}
+img {
+    height: 20px;
+    float: left;
+    margin-right: 5px;
+}
+.player {
+  color: greenyellow;
+  font-size: 24px;
+  font-weight: 600;
+}
+.class {
+    color: greenyellow;
+    font-size: 20px;
+}
+.enemy {
+  background: rgb(144, 144, 177);
+  color: rgb(130, 189, 236);
+  padding: 10px;
+}
+.bline {
+
+}
+.beat {
+  font-weight: 500;
+  color: yellow;
+}
+.tempo {
+  font-weight: 500;
+  color: rgb(98, 189, 37);
+}
+.frequency {
+  font-weight: 500;
+  color: rgb(255, 130, 47);
+}
+.tone {
+  font-weight: 500;
+  color: rgb(47, 137, 255);
+}
+.pitch {
+  font-weight: 500;
+  color: rgb(255, 47, 245);
+}

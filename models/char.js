@@ -8,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     charXP: DataTypes.INTEGER,
     charLevel: DataTypes.INTEGER,
     songUrl: DataTypes.STRING,
+    imageSRC: DataTypes.STRING
   });
   return Char;
 };

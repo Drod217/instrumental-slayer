@@ -5,11 +5,11 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
+
 var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
-
 
 var calcTempo = function (buffer) {
   var audioData = [];
@@ -37,7 +37,6 @@ var calcTempo = function (buffer) {
   // console.log(mt.spectralFlux);
   // console.log(mt.peaks);
 //   console.log(mt.events);
-test(tempo, duration);
 }
 
 // var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
@@ -45,12 +44,17 @@ test(tempo, duration);
 
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
+
 function test(x,y) {
   HP = y * 2
   return HP
 }
-test();
+test(100,300);
 console.log(HP);
+
 console.log(duration);
 // console.log(context);
+
+
+module.exports = slayer;
 

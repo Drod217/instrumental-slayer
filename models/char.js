@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     defense: DataTypes.INTEGER,
     alive: DataTypes.BOOLEAN,
     songUrl: DataTypes.STRING,
-    imageSRC: DataTypes.STRING
+    imageSRC: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE,
       field: 'createdAt',

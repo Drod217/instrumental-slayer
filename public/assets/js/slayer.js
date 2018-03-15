@@ -1,8 +1,4 @@
-<<<<<<< HEAD
- var AudioContext = require("web-audio-api").AudioContext;
-=======
-  var AudioContext = require("web-audio-api").AudioContext;
->>>>>>> 731e4a288876a5f59cbfbcd6f99145ddc06852c1
+var AudioContext = require("web-audio-api").AudioContext;
 var MusicTempo = require("music-tempo");
 var fs = require("fs");
 var tempo = 0;

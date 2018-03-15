@@ -7,7 +7,25 @@ module.exports = function(sequelize, DataTypes) {
     beats: DataTypes.INTEGER,
     charXP: DataTypes.INTEGER,
     charLevel: DataTypes.INTEGER,
+    hp: DataTypes.INTEGER,
+    maxHp: DataTypes.INTEGER,
+    physical: DataTypes.INTEGER,
+    magic: DataTypes.INTEGER,
+    speed: DataTypes.INTEGER,
+    defense: DataTypes.INTEGER,
+    alive: DataTypes.BOOLEAN,
     songUrl: DataTypes.STRING,
+    createdAt: {
+      type: DataTypes.DATE,
+      field: 'createdAt',
+      defaultValue: sequelize.literal('NOW()')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      field: 'updatedAt',
+      defaultValue: sequelize.literal('NOW()')
+    },
   });
+
   return Char;
 };

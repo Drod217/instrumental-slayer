@@ -1,4 +1,4 @@
-  var AudioContext = require("web-audio-api").AudioContext;
+var AudioContext = require("web-audio-api").AudioContext;
 var MusicTempo = require("music-tempo");
 var fs = require("fs");
 var tempo = 0;
@@ -44,19 +44,17 @@ var calcTempo = function (buffer) {
 
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
-<<<<<<< HEAD
+
 function test(x,y) {
   HP = y * 2
   return HP
 }
 test(100,300);
 console.log(HP);
-=======
 
-console.log(tempo);
->>>>>>> bbaffbdccb3c0d99dc511cd1c8344db63ac82742
 console.log(duration);
 // console.log(context);
 
 
 module.exports = slayer;
+

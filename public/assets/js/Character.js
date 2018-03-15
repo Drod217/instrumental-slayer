@@ -159,5 +159,12 @@ Character.prototype.revive = function(){
 
 
 // tests for console -
-// bob = new Character("bob", "mage", 240, 220, "https://www.google.com")
-// steve = new Character("steve", "fighter", 200, 180, "https://www.yahoo.com")
+bob = new Character("bob", "mage", 240, 220, "https://www.google.com")
+steve = new Character("steve", "fighter", 200, 180, "https://www.yahoo.com")
+
+bob.startingStats()
+steve.startingStats()
+bob.classStats()
+steve.classStats()
+console.log(bob)
+console.log(steve)

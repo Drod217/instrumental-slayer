@@ -49,7 +49,10 @@ function test(x,y) {
   HP = y * 2
   return HP
 }
-test();
+test(100,300);
 console.log(HP);
 console.log(duration);
 // console.log(context);
+
+
+module.exports = slayer;

@@ -1,6 +1,6 @@
 // var slayer = require('./slayer.js');
-
-var Character = function(name, charClass, tempo, songLength, songUrl){
+console.log("You connected character")
+var Character = function(name, charClass, tempo, songLength, songUrl, imageSrc){
   this.name = name;
   this.charClass = charClass;
   this.tempo = tempo;
@@ -10,6 +10,7 @@ var Character = function(name, charClass, tempo, songLength, songUrl){
   this.alive = true;
   this.charLevel = 1;
   this.songUrl = songUrl;
+  this.imageSrc = imageSrc;
 
 }
 
@@ -155,9 +156,16 @@ Character.prototype.revive = function(){
 
 // export the character object
 //
-// module.exports = Character;
+module.exports = Character;
 
 
-// tests for console -
+// // tests for console -
 // bob = new Character("bob", "mage", 240, 220, "https://www.google.com")
 // steve = new Character("steve", "fighter", 200, 180, "https://www.yahoo.com")
+//
+// bob.startingStats()
+// steve.startingStats()
+// bob.classStats()
+// steve.classStats()
+// console.log(bob)
+// console.log(steve)

@@ -1,11 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var db = require('../models/');
-<<<<<<< HEAD
-var slayer = require('/Users/David/BC/instrumental-slayer/public/assets/js/slayer.js');
-=======
+// var slayer = require('/Users/David/BC/instrumental-slayer/public/assets/js/slayer.js');
 var Character = require('../public/assets/js/Character.js');
->>>>>>> 69317e5aabc13db94cb650c5244b38c7e668eb21
 
 // Import the model (burger.js) to use its database functions.
 // var Char = require("../models/");
@@ -13,7 +10,6 @@ var Character = require('../public/assets/js/Character.js');
 // router.params to universalize the userid and enemyid paramaters in urls
 
 // router.param('userId', function(req, res, next, ))
-
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {

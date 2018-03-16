@@ -107,6 +107,9 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
 });
 
 router.post("/", function(req, res) {
+  console.log("____________________________");
+  console.log(req.body);
+   console.log("____________________________");
   db.Char.create([
     "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "songUrl"
   ], [

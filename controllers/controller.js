@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var db = require('../models/');
+var slayer = require('/Users/David/BC/instrumental-slayer/public/assets/js/slayer.js');
 
 // Import the model (burger.js) to use its database functions.
 // var Char = require("../models/");

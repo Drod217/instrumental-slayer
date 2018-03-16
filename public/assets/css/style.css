@@ -1,4 +1,4 @@
-html {
+.container {
   background: black;
 }
 /* .tile {
@@ -26,6 +26,12 @@ html {
 .songtitle {
   font-size: 1.2rem;
   color: white;
+  font-family: 'Cagliostro', sans-serif;
+}
+.songlist {
+  font-size: 1rem;
+  text-align: center;
+  color: hotpink;
   font-family: 'Cagliostro', sans-serif;
 }
 h1 {

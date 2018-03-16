@@ -78,8 +78,7 @@ context.decodeAudioData(data, calcTempo);
 
 // module.exports = slayer;
 
-random2 = Math.floor(Math.random() * soundTag.length);
-song2 = soundTag[random2];
+
 var data = fs.readFileSync(song2);
 
 // Spotify Widget Player

@@ -1,6 +1,173 @@
-.entire {
-    /* background: black; */
+.container {
+  background: black;
 }
+/* .tile {
+  border: 2px solid white;
+} */
+.entire, .notification {
+    margin-top: 1rem;
+    text-align: center;
+    background: black;
+    color: darkorange;
+}
+#start {
+  background: darkorange;
+  font-size: 2rem;
+  font-family: 'Cagliostro', sans-serif;
+  margin-top: 44.5rem;
+  border-radius: 1.2rem;
+  height: 3rem;
+}
+.middle {
+  border: 2px solid white;
+  border-radius: 1.2rem;
+  box-shadow: inset 0 0 50px white;
+}
+.songtitle {
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'Cagliostro', sans-serif;
+}
+.songlist {
+  font-size: 1rem;
+  text-align: center;
+  color: hotpink;
+  font-family: 'Cagliostro', sans-serif;
+}
+h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Cagliostro', sans-serif;
+}
+h2 {
+  color: grey;
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.red_0 {
+  border: 1px solid red;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: inset 0 0 50px red;
+}
+.red_1 {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Cagliostro', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.red_2 {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.red_3 {
+  border: 3px solid red;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.yellow_0 {
+  border: 1px solid yellow;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: inset 0 0 50px yellow;
+}
+.yellow_1 {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.yellow_2 {
+  color: yellow;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.yellow_3 {
+  border: 3px solid yellow;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.blue_0 {
+  border: 1px solid blue;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: inset 0 0 50px blue;
+}
+.blue_1 {
+  color: blue;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.blue_2 {
+  color: blue;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.blue_3 {
+  border: 3px solid blue;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.green_0 {
+  border: 1px solid greenyellow;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: inset 0 0 50px greenyellow;
+}
+.green_1 {
+  color: greenyellow;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.green_2 {
+  color: greenyellow;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+.green_3 {
+  border: 3px solid greenyellow;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-family: 'Cagliostro', sans-serif;
+}
+/* 
+
 .is-link, .is-success {
   color: black;
   margin: 2px;
@@ -62,4 +229,4 @@ img {
 .pitch {
   font-weight: 500;
   color: rgb(255, 47, 245);
-}
+} */

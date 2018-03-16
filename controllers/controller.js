@@ -16,12 +16,27 @@ router.get("/", function(req, res) {
     return res.render("index", charObject);
   });
 });
+// using routes for battle
+// router.get("/battle/:userId&:enemyId", function(req, res) {
+//   //console.log(db.Char);
+//   db.Char.findAll({}).then(function(data) {
+//     console.log("data" + JSON.stringify(data));
+//     var userChar = req.params.userId;
+//     var enemyChar = req.params.enemyId;
+//
+//     var charObject = {
+//       Char: data
+//
+//     };
+//     return res.render("battle", charObject);
+//   });
+// });
 
 router.post("/", function(req, res) {
   db.Char.create([
     "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "songUrl"
   ], [
-    req.body.name, 
+    req.body.name,
     req.body.charClass,
     req.body.tempo,
     req.body.songLength,

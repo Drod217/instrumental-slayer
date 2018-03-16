@@ -1,3 +1,29 @@
+Bob the Mage ( SL: 220 and Beats: 880)
+HP: 150 (red mana)
+Magic: 57 (cyan mana)
+Physical: 19 (blue mana)
+Speed: 20 (yellow mana)
+Defense: 21 (purple mana)
+
+
+
+
+Mage
+- Fireball ( req: 4 cyan mana per use: 14 uses )
+- Inferno ( req: 8 cyan mana + 6 red mana per use: 7 uses )
+- Arcane Shield ( req: 5 purple mana + 5 yellow mana per use: 4 uses )
+- Block ( req: 4 purple mana per use: 5 uses )
+
+Warrior
+- Swing
+- Charge
+- Counter
+- Block
+
+
+
+
+
 npm & api desired functions:
 
 -Pull a track's length/tempo/note/high and low notes.

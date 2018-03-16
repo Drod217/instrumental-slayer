@@ -50,3 +50,14 @@
             <div class="tile is-parent is-vertical is-2">
 
             </div>
+            {{#each Character}}
+                <div>
+                    <h1>Class {{this.class}}</h1>
+                    <img src="./public/assets/img"{{this.image}}>
+                    <p>Base Stats{{this.stats}}</p>
+                    <p>Abilities{{this.abilities}}</p>
+                </div>
+
+                <button href='battle.handlebars'></button>
+            {{/each}}
+

@@ -26,6 +26,7 @@ router.get("/", function(req, res) {
 
 
 // using routes for battle
+// a get route to display the battle screen with a userId and enemyId pulling from the database based on index
 router.get("/battle/:userId&:enemyId", function(req, res) {
   //console.log(db.Char);
   db.Char.findAll({}).then(function(data) {

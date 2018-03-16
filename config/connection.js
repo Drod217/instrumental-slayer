@@ -2,6 +2,18 @@
 // const mysql = require("mysql");
 // var connection;
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    port: 3306,
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "slayer_db"
+  });
+};
+
 // if (process.env.JAWSDB_URL) {
 //   connection = mysql.createConnection(process.env.JAWSDB_URL);
 // } else {
@@ -13,6 +25,7 @@
 //     database: "slayer_db"
 //   });
 // };
+
 
 // connection.connect();
 

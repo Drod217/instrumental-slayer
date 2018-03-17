@@ -30,7 +30,7 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var soundTag = ["../audio/09Mirrors.m4a",
+var soundTag = ["./audio/09Mirrors.m4a",
 "./audio/01Grenade.m4a",
 "./audio/01JohnCougar,JohnDeere,John3_16.m4a",
 "./audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a",

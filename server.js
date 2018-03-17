@@ -30,7 +30,7 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var soundTag = ["../audio/09 Mirrors.m4a",
+var soundTag = ["./audio/09 Mirrors.m4a",
 "./audio/01 Grenade.m4a",
 "./audio/01 John Cougar, John Deere, John 3_16.m4a",
 "./audio/01 Look At Me Now (feat. Lil Wayne & Busta Rhymes).m4a",
@@ -84,11 +84,13 @@ var calcTempo = function (buffer) {
   duration = ((length/2)/22090);
   console.log("Tempo: " + mt.tempo);
   console.log("Duration: " + duration);
+  
   // console.log("Duration in seconds: "+ (length/2)/22090);
 //   console.log(mt.beats);
   // console.log(mt.spectralFlux);
   // console.log(mt.peaks);
 //   console.log(mt.events);
+
 }
 
 // var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
@@ -97,6 +99,10 @@ var calcTempo = function (buffer) {
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
 
+// test();
+
+// console.log(HP);
+// console.log(duration);
 // console.log(tempo);
 // console.log(duration);
 // console.log(context);
@@ -129,7 +135,7 @@ var calcTempo2 = function (buffer) {
   var mt = new MusicTempo(audioData, p);
 
 
-  tempo = mt.tempo;
+  tempo2 = mt.tempo;
   duration = ((length/2)/22090);
   console.log("Tempo2: " + mt.tempo);
   console.log("Duration2: " + duration);
@@ -147,6 +153,7 @@ var context = new AudioContext();
 context.decodeAudioData(data, calcTempo2);
 
 
+
 var routes = require("./controllers/controller.js");
 
 app.use("/", routes);
@@ -154,5 +161,8 @@ app.use("/", routes);
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
+      console.log(tempo);
     });
   });
+
+  

@@ -85,9 +85,10 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
     // this runs specific attacks based on the attackName param
     if(attackName === "att1"){
       user.physAttack(enemy);
-      console.log(user.name + " attacked " + enemy.name + " successfully!");
+      console.log(user.name + " attacked " + enemy.name + " successfully for " + attack);
     } else if (attackName === "att2"){
       user.specAttack(enemy)
+      console.log(user.name + " attacked " + enemy.name + " successfully for " + attack);
     } else if (attackName === "heal") {
       user.heal()
     } else if (attackName === "block") {
@@ -96,10 +97,31 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
 
     // If the enemy still has health left, they hit you back or heal themselves or something
 
-    if(enemy.hp > 0){
-      enemy.heal();
-      afterAttackUserHp = user.hp;
-    }
+    if(enemy.hp > 0 && enemy.hp !== enemy.maxHp){
+      enemyAttackArr = [0,1,2];
+      enemyAttackSelect = enemyAttackArr[Math.random(Math.floor() * enemyAttackArr.length)];
+
+      if(enemyAttackSelect === 0){
+        enemy.physAttack(user);
+        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
+      } else if (enemyAttackSelect === 1){
+        enemy.specAttack(user);
+        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
+      } else {
+        enemy.heal();
+      }
+    } else {
+      enemyAttackArr = [0,1];
+      enemyAttackSelect = enemyAttackArr[Math.random(Math.floor() * enemyAttackArr.length)];
+
+      if(enemyAttackSelect === 0){
+        enemy.physAttack(user);
+        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
+      } else {
+        enemy.specAttack(user);
+        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
+      }
+    };
 
 
 

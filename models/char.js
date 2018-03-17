@@ -64,6 +64,8 @@ module.exports = function(sequelize, DataTypes) {
 
     enemy.deathCheck();
 
+    return attack
+
   }
   // a special attack, so we will take into account
   Char.prototype.specAttack = function(enemy){
@@ -107,6 +109,8 @@ module.exports = function(sequelize, DataTypes) {
 
     enemy.deathCheck();
 
+    return attack
+
   }
 
   // basic healing - a boost to this if you're a cleric
@@ -131,6 +135,7 @@ module.exports = function(sequelize, DataTypes) {
         this.hp += healAmmount
       }
   };
+
 }
 
   // block - a bonus if you're a fighter

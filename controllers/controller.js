@@ -65,8 +65,8 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
     var enemyChar = req.params.enemyId;
     var attackName = req.params.attackName;
 // from this we're using the first id in the URL to pick the user's fighter, and the second id to pick the enemy
-    console.log("User Char from Params is: " + JSON.stringify(data[userChar]));
-    console.log("Enemy Char from Params is: " + JSON.stringify(data[enemyChar]));
+    // console.log("User Char from Params is: " + JSON.stringify(data[userChar]));
+    // console.log("Enemy Char from Params is: " + JSON.stringify(data[enemyChar]));
 
 // now we want to make the two character objects so they can "fight"
 // use the Character constructor to make the user object
@@ -74,16 +74,69 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
     var user = data[userChar];
     var enemy = data[enemyChar];
 
+// we want to grab the HP at the start of the turn so that if you block, we know what the health was initially
+    var originalUserHp = user.hp
+    var afterAttackUserHp = 0;
+
+
     // this method is defined in the char sequelize model. Methods are also defined in the Character constructor presently, but that is redundant
-    user.sayName();
+    // user.sayName();
     // this runs specific attacks based on the attackName param
-    if(attackName === "phys1"){
-      user.physAttack(enemy);
-      console.log(user.name + " attacked " + enemy.name + " successfully!")
+    if(user.alive && enemy.alive){
+      if(attackName === "att1"){
+        user.physAttack(enemy);
+      } else if (attackName === "att2"){
+        user.specAttack(enemy)
+      } else if (attackName === "heal") {
+        user.heal()
+      } else if (attackName === "block") {
+        user.block()
+      }
+    }
+
+    if(attackName === "revive"){
+      user.revive();
+      enemy.revive();
+    }
+
+    // If the enemy still has health left, they hit you back or heal themselves or something
+
+    if(enemy.alive && enemy.hp !== enemy.maxHp && attackName !== "revive"){
+      enemyAttackSelect = Math.floor(Math.random() *2);
+      console.log("health isn't full " + enemyAttackSelect);
+
+      if(enemyAttackSelect === 0){
+        enemy.physAttack(user);
+
+      } else if (enemyAttackSelect === 1){
+        enemy.specAttack(user);
+      } else if (enemyAttackSelect === 2){
+        enemy.heal();
+      }
+    } else if (enemy.alive && attackName !== "revive"){
+      enemyAttackSelect = Math.floor(Math.random());
+
+      if(enemyAttackSelect === 0){
+        enemy.physAttack(user);
+      } else {
+        enemy.specAttack(user);
+      }
+    }
+    else if (!enemy.alive && attackName !== "revive") {
+      console.log("They (as in " + enemy.name +") are dead, jim")
     };
-    // this is a variable to collect the enemy's new stats. This can be updated soon to include mana as well
+
+
+
+    // this is a variable to collect the enemy and user's new stats. This can be updated soon to include mana as well
     var newEnemyData = {
-      hp: enemy.hp
+      hp: enemy.hp,
+      alive: enemy.alive
+    }
+
+    var newUserData = {
+      hp: user.hp,
+      alive: user.alive
     }
 
 
@@ -92,6 +145,11 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
     db.Char.update(newEnemyData, {where: {name: enemy.name} })
       .then(updatedEnemy => {
         console.log(updatedEnemy)
+      });
+
+    db.Char.update(newUserData, {where: {name: user.name} })
+      .then(updatedUser => {
+        console.log(updatedUser)
       });
 
 

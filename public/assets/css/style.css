@@ -30,7 +30,6 @@
 }
 .songlist {
   font-size: 1rem;
-  text-align: center;
   color: hotpink;
   font-family: 'Cagliostro', sans-serif;
 }
@@ -167,6 +166,7 @@ h2 {
   font-family: 'Cagliostro', sans-serif;
 }
 
+<<<<<<< HEAD
 .button {
   margin: 0.2rem;
   border-radius: 20px;
@@ -239,6 +239,8 @@ h2 {
   background-color: #000000;
 }
 
+=======
+>>>>>>> c3f22ee6109978f3336300e3b90cfdfbfdbc602d
 /* 
 
 .is-link, .is-success {

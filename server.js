@@ -30,7 +30,7 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var soundTag = ["../audio/09Mirrors.m4a",
+var soundTag = ["./audio/09Mirrors.m4a",
 "./audio/01Grenade.m4a",
 "./audio/01JohnCougar,JohnDeere,John3_16.m4a",
 "./audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a",
@@ -52,9 +52,9 @@ var soundTag = ["../audio/09Mirrors.m4a",
 "./audio/27TearsInHeaven.m4a"
 ];
 
-$("#songChoice").click(function(){
-  $("#songlist").hide();
-});
+// $("#songChoice").click(function(){
+//   $("#songlist").hide();
+// });
 // var soundTag = ["mirrors","grenade","johncougar","lookatmenow","life","bottom","wake","withyou",
 // "climax","lucky","freak","run","dre","who","superstar","before","wrecking","afraid","ordinary","tears"];
 
@@ -63,7 +63,7 @@ song = soundTag[random];
 
 var data = fs.readFileSync(song);
 console.log(song);
->>>>>>> a60b88e705cbd82c50144631f0f5ca3042a4f3d5
+
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">

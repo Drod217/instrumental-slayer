@@ -11,7 +11,6 @@ var Character = require('../public/assets/js/Character.js');
 
 // router.param('userId', function(req, res, next, ))
 
-
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   //console.log(db.Char);

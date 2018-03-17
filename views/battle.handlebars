@@ -1,21 +1,90 @@
+<div class="tile is-ancestor">
+      <div class="tile is-parent is-vertical is-1">
+
+      </div>
+      <div class="tile is-3 is-vertical is-parent">
+        <article class="tile is-child yellow_0 is-12">
+          <p class="yellow_1">Double Drop Marvin</p>
+          <figure class="image is-1by1 yellow_3">
+            <img src="./assets/img/note_yellow.png">
+          </figure>
+          <div class="tile is-child box player is-3">
+              <img src="./assets/img/health.png"><p id="health0">{{player.maxHP}}</p>
+              <img src="./assets/img/damage.png"><p id="damage0">{{player.physical}}</p>
+              <img src="./assets/img/defense.png"><p id="defense0">{{player.defense}}</p>
+          </div>
+        </article>
+        <div class="tile is-child box yellow_0">
+          <progress class="progress is-danger" id="p2_health" value="1000" max="1000"></progress>
+          <button class="button is-success ability-box1" id="ability0">Note Slash</button>
+          <button class="button is-success ability-box2" id="ability1">Beat Drop</button>
+          <button class="button is-success ability-box3" id="ability2">Resonance</button>
+          <button class="button is-success ability-box4" id="ability3">Block</button>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box middle">
+          <p class="title">Battlefield</p>
+          <p>THIS IS WHERE ALL THE MUSICAL GRAPHIC JAZZ HAPPENS</p>
+          <div class="equalizer">
+              <span class="column" id="purple"></span>
+              <span class="column" id="blue"></span>
+              <span class="column" id="cyan"></span>
+              <span class="column" id="green"></span>
+              <span class="column" id="yellow"></span>
+              <span class="column" id="orange"></span>
+              <span class="column" id="red"></span> 
+              <span id="black"></span>
+              <br/>
+              <input type="button" onclick="JavaScript: play();" value="Play" id=button>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-3 is-vertical is-parent">
+        <article class="tile is-child green_0 is-12">
+          <p class="green_1">Peeky Paula</p>
+          <figure class="image is-1by1 green_3">
+            <img src="./assets/img/note_green.png">
+          </figure>
+          <div class="tile is-child box player is-3">
+              <img src="./assets/img/health.png"><p id="health0">{{enemy.maxHP}}</p>
+              <img src="./assets/img/damage.png"><p id="damage0">{{enemy.physical}}</p>
+              <img src="./assets/img/defense.png"><p id="defense0">{{enemy.defense}}</p>
+          </div>
+        </article>
+        <div class="tile is-child box green_0">
+          <progress class="progress is-danger" id="p1_health" value="1000" max="1000"></progress>
+          <button class="button is-link ability-box1" id="ability0">Quarter Note</button>
+          <button class="button is-link ability-box2" id="ability1">Up Tempo</button>
+          <button class="button is-link ability-box3" id="ability2">Pitch Perfect</button>
+          <button class="button is-link ability-box4" id="ability3">Block</button>
+        </div>
+      </div>
+      <div class="tile is-parent is-vertical is-1">
+
+      </div>
+    </div>
+
+
+
 <!--This is where the battle will take place!!-->
 
-        <div class="tile is-ancestor is-12">
+        {{!-- <div class="tile is-ancestor is-12">
           <div class="tile is-parent">
             <div class="tile is-child box player is-3 player-img">
-                <div class="tile is-child box player">
+                <div class="tile is-child box player"> --}}
                     {{!-- using the user param from the GET url --}}
-                        <p class="player">{{user.name}}</p>
+                        {{!-- <p class="player">{{user.name}}</p>
                         <p class="hp">{{user.hp}}</p>
                         <p class="maxHp">{{user.maxHp}}</p>
                         <p class="class">{{user.charClass}}</p>
-                        <p class="level">{{user.charLevel}}</p>
+                        <p class="level">{{user.charLevel}}</p> --}}
 {{!--
                         <p class="player">{{Char.0.name}}</p>
                         <p class="class">{{Char.0.charClass}}</p>
                         <p class="level">{{Char.0.charLevel}}</p> --}}
                         {{!-- <img src="{{Char.0.imageSRC}}" class="player" > --}}
-
+{{!-- 
                 </div>
                 <div class="tile is-parent">
                 <div class="tile is-child box player is-4">
@@ -32,7 +101,7 @@
             </div>
           </div>
         </div>
-          <div>
+          <div> --}}
             <!-- <div class="tile is-ancestor">
               <div class="tile is-parent is-vertical">
                   <div class="column is-child">
@@ -54,22 +123,22 @@
                   </div>
                 </div>
             </div> -->
-          </div>
+          {{!-- </div>
           <div class="tile is-ancestor is-12">
               <div class="tile is-parent">
                 <div class="tile is-child box player is-3 enemy-img">
-                    <div class="tile is-child box">
+                    <div class="tile is-child box"> --}}
                         {{!-- using the enemy param from the GET url  --}}
-                        <p class="player">{{enemy.name}}</p>
+                        {{!-- <p class="player">{{enemy.name}}</p>
                         <p class="hp">{{enemy.hp}}</p>
                         <p class="maxHp">{{enemy.maxHp}}</p>
                         <p class="class">{{enemy.charClass}}</p>
-                        <p class="level">{{enemy.charLevel}}</p>
+                        <p class="level">{{enemy.charLevel}}</p> --}}
 
                         {{!-- <p class="player">{{Char.1.name}}</p>
                         <p class="class">{{Char.1.charClass}}</p>
                         <p class="level">{{Char.1.charLevel}}</p> --}}
-
+{{!-- 
                     </div>
                     <div class="tile is-parent">
                     <div class="tile is-child box player is-4">
@@ -86,12 +155,4 @@
               </div>
             </div>
           </div>
-        </div>
-
-           <h1>This is working yo!</h1>
-            <h2>{{{HP}}}</h2>
-            {{#each Char}}
-              {{this.name}}
-              {{this.charClass}}
-              {{this.charLevel}}
-			{{/each}}
+        </div> --}}

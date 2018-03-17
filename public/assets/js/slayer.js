@@ -42,4 +42,3 @@ function test(x,y) {
 test(100,300);
 console.log(HP);
 console.log(duration);
-

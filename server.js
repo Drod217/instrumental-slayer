@@ -30,27 +30,31 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var soundTag = ["./audio/09 Mirrors.m4a",
-"./audio/01 Grenade.m4a",
-"./audio/01 John Cougar, John Deere, John 3_16.m4a",
-"./audio/01 Look At Me Now (feat. Lil Wayne & Busta Rhymes).m4a",
-"./audio/01 My Life (feat. Eminem & Adam Levine).m4a",
-"./audio/01 Started from the Bottom.m4a",
-"./audio/01 Wake Me Up.m4a",
-"./audio/1-04 I Don't Fuck With You (feat. E-40).mp3",
-"./audio/03 Climax.m4a",
-"./audio/03 Lucky (feat. Colbie Caillat).m4a",
-"./audio/04 Lil Freak (feat. Nicki Minaj).m4a",
-"./audio/04 Run This Town (feat. Rihanna & Kanye West).m4a",
-"./audio/04 Still D.R.E. (feat. Snoop Dogg).m4a",
-"./audio/04 Who Says.m4a",
-"./audio/05 Superstar (feat. Matthew Santos).m4a",
-"./audio/07 Before He Cheats.m4a",
-"./audio/07 Like a Wrecking Ball.m4a",
-"./audio/07 Not Afraid.m4a",
-"./audio/08 Ordinary People.m4a",
-"./audio/27 Tears In Heaven.m4a"
+var soundTag = ["../audio/09Mirrors.m4a",
+"./audio/01Grenade.m4a",
+"./audio/01JohnCougar,JohnDeere,John3_16.m4a",
+"./audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a",
+"./audio/01MyLife(feat.Eminem&AdamLevine).m4a",
+"./audio/01StartedfromtheBottom.m4a",
+"./audio/01WakeMeUp.m4a",
+"./audio/1-04IDon'tFuckWithYou(feat.E-40).mp3",
+"./audio/03Climax.m4a",
+"./audio/03Lucky(feat.ColbieCaillat).m4a",
+"./audio/04LilFreak(feat.NickiMinaj).m4a",
+"./audio/04RunThisTown(feat.Rihanna&KanyeWest).m4a",
+"./audio/04StillD.R.E.(feat.SnoopDogg).m4a",
+"./audio/04WhoSays.m4a",
+"./audio/05Superstar(feat.MatthewSantos).m4a",
+"./audio/07BeforeHeCheats.m4a",
+"./audio/07LikeaWreckingBall.m4a",
+"./audio/07NotAfraid.m4a",
+"./audio/08OrdinaryPeople.m4a",
+"./audio/27TearsInHeaven.m4a"
 ];
+
+$("#songChoice").click(function(){
+  $("#songlist").hide();
+});
 // var soundTag = ["mirrors","grenade","johncougar","lookatmenow","life","bottom","wake","withyou",
 // "climax","lucky","freak","run","dre","who","superstar","before","wrecking","afraid","ordinary","tears"];
 
@@ -59,6 +63,7 @@ song = soundTag[random];
 
 var data = fs.readFileSync(song);
 console.log(song);
+>>>>>>> a60b88e705cbd82c50144631f0f5ca3042a4f3d5
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">

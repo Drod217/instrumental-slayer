@@ -170,18 +170,30 @@ router.post("/", function(req, res) {
   console.log("____________________________");
   console.log(req.body);
    console.log("____________________________");
-  db.Char.create([
-    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "songUrl"
-  ], [
-    req.body.name,
+
+  db.Char.create(
+    [
+    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "hp", "macxhp","physical", "magic", "speed", "defense", "alive", "songUrl", "imageSRC" 
+    ], 
+    [
+    req.body.name, 
     req.body.charClass,
     req.body.tempo,
     req.body.songLength,
     req.body.beats,
     req.body.charXP,
     req.body.charLevel,
-    req.body.songLength
-  ], function() {
+    req.body.hp,
+    req.body.maxhp,
+    req.body.physical,
+    req.body.magic,
+    req.body.speed,
+    req.body.defense,
+    req.body.alive,
+    req.body.songUrl,
+    req.body.imageSRC,
+  ], 
+  function() {
     res.redirect("/");
   });
 });

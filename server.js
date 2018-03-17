@@ -52,9 +52,7 @@ var soundTag = ["./audio/09Mirrors.m4a",
 "./audio/27TearsInHeaven.m4a"
 ];
 
-// $("#songChoice").click(function(){
-//   $("#songlist").hide();
-// });
+
 // var soundTag = ["mirrors","grenade","johncougar","lookatmenow","life","bottom","wake","withyou",
 // "climax","lucky","freak","run","dre","who","superstar","before","wrecking","afraid","ordinary","tears"];
 

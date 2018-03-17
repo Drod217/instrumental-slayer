@@ -84,7 +84,7 @@ var calcTempo = function (buffer) {
   duration = ((length/2)/22090);
   console.log("Tempo: " + mt.tempo);
   console.log("Duration: " + duration);
-  
+
   // console.log("Duration in seconds: "+ (length/2)/22090);
 //   console.log(mt.beats);
   // console.log(mt.spectralFlux);
@@ -97,7 +97,8 @@ var calcTempo = function (buffer) {
 // var data = fs.readFileSync("../audio/seinfeld.mp3");
 
 var context = new AudioContext();
-context.decodeAudioData(data, calcTempo);
+// turning off
+// context.decodeAudioData(data, calcTempo);
 
 // test();
 
@@ -150,7 +151,8 @@ var calcTempo2 = function (buffer) {
 // var data = fs.readFileSync("../audio/seinfeld.mp3");
 
 var context = new AudioContext();
-context.decodeAudioData(data, calcTempo2);
+// turning off
+// context.decodeAudioData(data, calcTempo2);
 
 
 
@@ -164,5 +166,3 @@ db.sequelize.sync().then(function() {
       console.log(tempo);
     });
   });
-
-  

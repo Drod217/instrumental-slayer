@@ -83,44 +83,48 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
     // this method is defined in the char sequelize model. Methods are also defined in the Character constructor presently, but that is redundant
     // user.sayName();
     // this runs specific attacks based on the attackName param
-    if(attackName === "att1"){
-      user.physAttack(enemy);
-      console.log(user.name + " attacked " + enemy.name + " successfully for " + attack);
-    } else if (attackName === "att2"){
-      user.specAttack(enemy)
-      console.log(user.name + " attacked " + enemy.name + " successfully for " + attack);
-    } else if (attackName === "heal") {
-      user.heal()
-    } else if (attackName === "block") {
-      user.block()
+    if(user.alive && enemy.alive){
+      if(attackName === "att1"){
+        user.physAttack(enemy);
+      } else if (attackName === "att2"){
+        user.specAttack(enemy)
+      } else if (attackName === "heal") {
+        user.heal()
+      } else if (attackName === "block") {
+        user.block()
+      }
+    }
+
+    if(attackName === "revive"){
+      user.revive();
+      enemy.revive();
     }
 
     // If the enemy still has health left, they hit you back or heal themselves or something
 
-    if(enemy.hp > 0 && enemy.hp !== enemy.maxHp){
-      enemyAttackArr = [0,1,2];
-      enemyAttackSelect = enemyAttackArr[Math.random(Math.floor() * enemyAttackArr.length)];
+    if(enemy.alive && enemy.hp !== enemy.maxHp && attackName !== "revive"){
+      enemyAttackSelect = Math.floor(Math.random() *2);
+      console.log("health isn't full " + enemyAttackSelect);
 
       if(enemyAttackSelect === 0){
         enemy.physAttack(user);
-        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
+
       } else if (enemyAttackSelect === 1){
         enemy.specAttack(user);
-        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
-      } else {
+      } else if (enemyAttackSelect === 2){
         enemy.heal();
       }
-    } else {
-      enemyAttackArr = [0,1];
-      enemyAttackSelect = enemyAttackArr[Math.random(Math.floor() * enemyAttackArr.length)];
+    } else if (enemy.alive && attackName !== "revive"){
+      enemyAttackSelect = Math.floor(Math.random());
 
       if(enemyAttackSelect === 0){
         enemy.physAttack(user);
-        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
       } else {
         enemy.specAttack(user);
-        console.log(enemy.name + " attacked " + user.name + " successfully for " + attack);
       }
+    }
+    else if (!enemy.alive && attackName !== "revive") {
+      console.log("They (as in " + enemy.name +") are dead, jim")
     };
 
 

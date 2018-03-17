@@ -61,10 +61,9 @@ module.exports = function(sequelize, DataTypes) {
     // console.log(this.name + " attacks " + enemy.name + " for " + attack);
 
     enemy.hp -= attack
+    console.log(this.name + " attacked " + enemy.name + " successfully for " + attack);
 
     enemy.deathCheck();
-
-    return attack
 
   }
   // a special attack, so we will take into account
@@ -106,10 +105,10 @@ module.exports = function(sequelize, DataTypes) {
     // console.log(this.name + " attacks " + enemy.name + " for " + attack);
 
     enemy.hp -= attack
+    console.log(this.name + " attacked " + enemy.name + " successfully for " + attack);
 
     enemy.deathCheck();
 
-    return attack
 
   }
 

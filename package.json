@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Drod217/instrumental-slayer#readme",
   "dependencies": {
     "audio-render": "^2.0.1",
+    "browserify": "^16.1.1",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
@@ -27,7 +28,9 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.2",
     "nodemon": "^1.17.1",
+    "requirejs": "^2.3.5",
     "sequelize": "^4.36.1",
+    "update": "^0.7.4",
     "web-audio-api": "^0.2.2"
   }
 }

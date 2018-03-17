@@ -41,6 +41,7 @@ random = Math.floor(Math.random() * soundTag.length);
 song = soundTag[random];
 
 var data = fs.readFileSync(song);
+console.log(song);
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
@@ -87,8 +88,11 @@ context.decodeAudioData(data, calcTempo);
 // module.exports = slayer;
 
 random2 = Math.floor(Math.random() * soundTag.length);
-song2 = soundTag[random];
+
+song2 = soundTag[random2];
+
 var data = fs.readFileSync(song2);
+console.log(song2);
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
@@ -126,3 +130,23 @@ var calcTempo2 = function (buffer) {
 
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo2);
+
+
+
+
+
+test(tempo, duration);
+}
+
+// var data = fs.readFileSync("../audio/01 Wake Me Up.m4a");
+// var data = fs.readFileSync("../audio/seinfeld.mp3");
+
+var context = new AudioContext();
+context.decodeAudioData(data, calcTempo);
+function test(x,y) {
+  HP = y * 2
+  return HP
+}
+test(100,300);
+console.log(HP);
+console.log(duration);

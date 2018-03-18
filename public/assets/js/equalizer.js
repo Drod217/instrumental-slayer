@@ -19,7 +19,7 @@ function randomNumber(min, max) {
   
   // A Function to change the height of a column more or less randomly
   function changeHeight(column, height) {
-    height-=randomNumber(-20,20);
+    height-=randomNumber(-15,15);
     if (height>400) height=400;
     if (height<5) height=5;
     column.style.height=height + "px";  

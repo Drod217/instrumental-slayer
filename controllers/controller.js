@@ -52,7 +52,9 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
       enemy: data[enemyChar]
 
     };
-    return res.render("battle", charObject);
+
+    // var scripts = [{ script: './assets/js/battle.js'}]
+    return res.render("battle", {data: charObject, scripts: './assets/js/battle.js'});
   });
 });
 
@@ -172,10 +174,10 @@ router.post("/", function(req, res) {
 
   db.Char.create(
     [
-    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "hp", "macxhp","physical", "magic", "speed", "defense", "alive", "songUrl", "imageSRC" 
-    ], 
+    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "hp", "macxhp","physical", "magic", "speed", "defense", "alive", "songUrl", "imageSRC"
+    ],
     [
-    req.body.name, 
+    req.body.name,
     req.body.charClass,
     req.body.tempo,
     req.body.songLength,
@@ -191,7 +193,7 @@ router.post("/", function(req, res) {
     req.body.alive,
     req.body.songUrl,
     req.body.imageSRC,
-  ], 
+  ],
   function() {
     res.redirect("/");
   });

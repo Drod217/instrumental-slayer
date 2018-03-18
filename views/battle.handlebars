@@ -1,25 +1,27 @@
+
+
 <div class="tile is-ancestor">
       <div class="tile is-parent is-vertical is-1">
 
       </div>
       <div class="tile is-3 is-vertical is-parent">
         <article class="tile is-child yellow_0 is-12">
-          <p class="yellow_1">Double Drop Marvin</p>
+          <p class="yellow_1">user.name</p>
           <figure class="image is-1by1 yellow_3">
             <img src="./assets/img/note_yellow.png">
           </figure>
           <div class="tile is-child box player is-3">
-              <img src="./assets/img/health.png"><p id="health0">{{player.maxHP}}</p>
-              <img src="./assets/img/damage.png"><p id="damage0">{{player.physical}}</p>
-              <img src="./assets/img/defense.png"><p id="defense0">{{player.defense}}</p>
+              <img src="./assets/img/health.png"><p id="health0">{{user.hp}} / {{user.max}}</p>
+              <img src="./assets/img/damage.png"><p id="damage0">{{user.physical}}</p>
+              <img src="./assets/img/defense.png"><p id="defense0">{{user.defense}}</p>
           </div>
         </article>
         <div class="tile is-child box yellow_0">
           <progress class="progress is-danger" id="p2_health" value="1000" max="1000"></progress>
-          <button class="button is-success ability-box1" id="ability0">Note Slash</button>
-          <button class="button is-success ability-box2" id="ability1">Beat Drop</button>
-          <button class="button is-success ability-box3" id="ability2">Resonance</button>
-          <button class="button is-success ability-box4" id="ability3">Block</button>
+          <button class="button is-success ability-box1 ability-button" id="ability0" name="att1">Note Slash</button>
+          <button class="button is-success ability-box2 ability-button" id="ability1" name="att2">Beat Drop</button>
+          <button class="button is-success ability-box3 ability-button" id="ability2" name="heal">Resonance</button>
+          <button class="button is-success ability-box4 ability-button" id="ability3" name="block">Block</button>
         </div>
       </div>
       <div class="tile is-parent">
@@ -33,7 +35,7 @@
               <span class="column" id="green"></span>
               <span class="column" id="yellow"></span>
               <span class="column" id="orange"></span>
-              <span class="column" id="red"></span> 
+              <span class="column" id="red"></span>
               <span id="black"></span>
               <br/>
               <input type="button" onclick="JavaScript: play();" value="Play" id=button>
@@ -42,12 +44,12 @@
       </div>
       <div class="tile is-3 is-vertical is-parent">
         <article class="tile is-child green_0 is-12">
-          <p class="green_1">Peeky Paula</p>
+          <p class="green_1">enemy.name</p>
           <figure class="image is-1by1 green_3">
             <img src="./assets/img/note_green.png">
           </figure>
           <div class="tile is-child box player is-3">
-              <img src="./assets/img/health.png"><p id="health0">{{enemy.maxHP}}</p>
+              <img src="./assets/img/health.png"><p id="health0">{{enemy.hp}} / {{enemy.maxHp}}</p>
               <img src="./assets/img/damage.png"><p id="damage0">{{enemy.physical}}</p>
               <img src="./assets/img/defense.png"><p id="defense0">{{enemy.defense}}</p>
           </div>
@@ -84,7 +86,7 @@
                         <p class="class">{{Char.0.charClass}}</p>
                         <p class="level">{{Char.0.charLevel}}</p> --}}
                         {{!-- <img src="{{Char.0.imageSRC}}" class="player" > --}}
-{{!-- 
+{{!--
                 </div>
                 <div class="tile is-parent">
                 <div class="tile is-child box player is-4">
@@ -138,7 +140,7 @@
                         {{!-- <p class="player">{{Char.1.name}}</p>
                         <p class="class">{{Char.1.charClass}}</p>
                         <p class="level">{{Char.1.charLevel}}</p> --}}
-{{!-- 
+{{!--
                     </div>
                     <div class="tile is-parent">
                     <div class="tile is-child box player is-4">

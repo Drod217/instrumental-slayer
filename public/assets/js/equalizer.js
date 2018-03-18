@@ -15,7 +15,7 @@ function randomNumber(min, max) {
   red = 200;
   
   //To start with the equalizer is paused
-  var playing=false;
+  var playing=true;
   
   // A Function to change the height of a column more or less randomly
   function changeHeight(column, height) {

@@ -38,3 +38,12 @@ $(document).ready(function(){
       $("#button").hide();
     });
     });
+
+
+$.ajax({
+  url: "./assets/js/slayer.js",
+    dataType: "script",
+    success: function(response) {
+      console.log(response);
+      }
+    });    

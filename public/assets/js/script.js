@@ -25,7 +25,7 @@ var soundTag = ["./audio/09Mirrors.m4a",
 
 
 
-
+alert("linked");
 
 $(document).ready(function(){
     $(".eq").hide();
@@ -36,5 +36,18 @@ $(document).ready(function(){
       $(".eq").show();
       $(".songtitle").hide();
       $("#button").hide();
+
+  // ability buttons
+  $(".ability-button").on("click", function(event) {
+    var userId = user.id -1;
+    var enemyId = enemy.id -1;
+    var attackName = $(this).name;
+    alert("clicked the ability button");
+  });
+
+
+
+
+
     });
     });

@@ -42,6 +42,7 @@ function randomNumber(min, max) {
     }
   }
   
+  
   //A Function to play or pause the animation
   function play() {
     if (playing) {
@@ -53,3 +54,7 @@ function randomNumber(min, max) {
       animate();
     }
   }
+
+  $(document).ready(function(){
+    play();
+  });

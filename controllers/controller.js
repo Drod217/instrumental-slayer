@@ -54,7 +54,7 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
     };
 
     // var scripts = [{ script: './assets/js/battle.js'}]
-    return res.render("battle", {data: charObject, scripts: './assets/js/battle.js'});
+    return res.render("battle", charObject);
   });
 });
 

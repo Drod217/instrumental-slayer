@@ -5,7 +5,7 @@ var tempo = 0;
 var duration = 0;
 // const audio = require("/assets/audio");
 
-var soundTag = ["./audio/09Mirrors.m4a",
+var soundTag = ["../audio/09Mirrors.m4a",
 "../audio/01Grenade.m4a",
 "../audio/01JohnCougar,JohnDeere,John3_16.m4a",
 "../audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a",
@@ -32,10 +32,10 @@ var soundTag = ["./audio/09Mirrors.m4a",
 // "climax","lucky","freak","run","dre","who","superstar","before","wrecking","afraid","ordinary","tears"];
 
 random = Math.floor(Math.random() * soundTag.length);
-song = soundTag[random];
+song = soundTag[18];
 
 var data = fs.readFileSync(song);
-console.log(song);
+
 
 
 // Spotify Widget Player
@@ -60,6 +60,7 @@ var calcTempo = function (buffer) {
 
   tempo = mt.tempo;
   duration = ((length/2)/22090);
+  console.log("Song: " + song);
   console.log("Tempo: " + mt.tempo);
   console.log("Duration: " + duration);
 
@@ -76,7 +77,7 @@ var calcTempo = function (buffer) {
 
 var context = new AudioContext();
 // turning off
-// context.decodeAudioData(data, calcTempo);
+context.decodeAudioData(data, calcTempo);
 
 // test();
 
@@ -90,9 +91,9 @@ var context = new AudioContext();
 // module.exports = slayer;
 
 random2 = Math.floor(Math.random() * soundTag.length);
-song2 = soundTag[random2];
+song2 = soundTag[19];
 var data = fs.readFileSync(song2);
-console.log(song2);
+
 
 // Spotify Widget Player
 // <iframe src="https://open.spotify.com/embed/user/1233302581/playlist/0CxcHM5HGzoAIyrbG8jeZM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
@@ -116,6 +117,7 @@ var calcTempo2 = function (buffer) {
 
   tempo2 = mt.tempo;
   duration = ((length/2)/22090);
+  console.log("Song: " + song2);
   console.log("Tempo2: " + mt.tempo);
   console.log("Duration2: " + duration);
   // console.log("Duration in seconds: "+ (length/2)/22090);
@@ -131,3 +133,4 @@ var calcTempo2 = function (buffer) {
 var context = new AudioContext();
 // turning off
 context.decodeAudioData(data, calcTempo2);
+

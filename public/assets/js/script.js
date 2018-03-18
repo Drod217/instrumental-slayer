@@ -28,9 +28,13 @@ var soundTag = ["./audio/09Mirrors.m4a",
 
 
 $(document).ready(function(){
+    $(".eq").hide();
     $(".songlist li").click(function(){
       var ID = $(this).attr('id');
       alert(soundTag[ID]);
-      // $("#songlist").hide();
+      $(".songlist").hide();
+      $(".eq").show();
+      $(".songtitle").hide();
+      $("#button").hide();
     });
     });

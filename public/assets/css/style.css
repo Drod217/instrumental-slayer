@@ -193,8 +193,13 @@ h2 {
 }
 
 .stat-div {
-  background: white;
+  background: black;
+}
+
+.stats {
   color: white;
+  font-size: 2rem;
+  font-family: 'Cagliostro', sans-serif;
 }
 
 /* ----- EQUALIZER CSS SECTION BELOW ---- */

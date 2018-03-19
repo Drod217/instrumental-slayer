@@ -1,0 +1,99 @@
+0
+Song: ../audio/09Mirrors.m4a
+Tempo: 153.700
+Duration: 484.7891353553644
+
+1
+Song: ../audio/01Grenade.m4a
+Tempo2: 110.395
+Duration2: 221.7430511543685
+
+2
+Song: ../audio/01JohnCougar,JohnDeere,John3_16.m4a
+Tempo: 169.963
+Duration: 221.25631507469444
+
+3
+Song: ../audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a
+Tempo2: 146.013
+Duration2: 223.5972838388411
+
+4
+Song: ../audio/01MyLife(feat.Eminem&AdamLevine).m4a
+Tempo: 176.008
+Duration: 238.94105930285198
+
+5
+Song: ../audio/01StartedfromtheBottom.m4a
+Tempo2: 85.039
+Duration2: 172.90719782707106
+
+6
+Song: ../audio/01WakeMeUp.m4a
+Tempo: 123.671
+Duration: 249.30158442734268
+
+7
+Song: ../audio/1-04IDon'tFuckWithYou(feat.E-40).mp3
+Tempo2: 195.024
+Duration2: 283.9322770484382
+
+8
+Song: ../audio/03Climax.m4a
+Tempo: 135.974
+Duration: 232.54395654142147
+
+9
+Song: ../audio/03Lucky(feat.ColbieCaillat).m4a
+Tempo2: 129.788
+Duration2: 189.3403349932096
+
+10
+Song: ../audio/04LilFreak(feat.NickiMinaj).m4a
+Tempo: 139.972
+Duration: 233.8882752376641
+
+11
+Song: ../audio/04RunThisTown(feat.Rihanna&KanyeWest).m4a
+Tempo2: 173.240
+Duration2: 267.03268447261206
+
+12
+Song: ../audio/04StillD.R.E.(feat.SnoopDogg).m4a
+Tempo: 187.016
+Duration: 270.16170212765957
+
+13
+Song: ../audio/04WhoSays.m4a
+Tempo2: 180.478
+Duration2: 175.1554549569941
+
+14
+Song: ../audio/05Superstar(feat.MatthewSantos).m4a
+Tempo: 190.231
+Duration: 290.04834766862837
+
+15
+Song: ../audio/07BeforeHeCheats.m4a
+Tempo2: 147.584
+Duration2: 199.6313263920326
+
+16
+Song: ../audio/07LikeaWreckingBall.m4a
+Tempo: 133.692
+Duration: 198.63467632412858
+
+17
+Song: ../audio/07NotAfraid.m4a
+Tempo2: 171.912
+Duration2: 247.70230873698506
+
+18
+Song: ../audio/08OrdinaryPeople.m4a
+Tempo: 98.757
+Duration: 281.00896333182436
+
+19
+Song: ../audio/27TearsInHeaven.m4a
+Tempo2: 151.696
+Duration2: 272.6880941602535

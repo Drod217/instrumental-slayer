@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     alive: DataTypes.BOOLEAN,
     songUrl: DataTypes.STRING,
     imageSRC: DataTypes.STRING,
+    message: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE,
       field: 'createdAt',

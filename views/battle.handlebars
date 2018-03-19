@@ -10,9 +10,9 @@
             <img src="../assets/img/note_yellow.png">
           </figure>
           <div class="tile is-child box player is-3">
-              <img src="../assets/img/health.png"><p id="health0">{{user.hp}} / {{user.maxHp}}</p>
-              <img src="../assets/img/damage.png"><p id="damage0">{{user.physical}}</p>
-              <img src="../assets/img/defense.png"><p id="defense0">{{user.defense}}</p>
+              <img src="../assets/img/health.png"><p id="health0">HP: {{user.hp}} / {{user.maxHp}}</p>
+              <img src="../assets/img/damage.png"><p id="damage0"> Physical: {{user.physical}}</p>
+              <img src="../assets/img/defense.png"><p id="defense0"> Defense: {{user.defense}}</p>
           </div>
         </article>
         <div class="tile is-child box yellow_0">
@@ -26,7 +26,8 @@
       <div class="tile is-parent">
         <div class="tile is-child box middle">
           <p class="title">Battlefield</p>
-          <p>THIS IS WHERE ALL THE MUSICAL GRAPHIC JAZZ HAPPENS</p>
+          <p>The battle between {{user.name}} and {{enemy.name}} is under way!</p>
+          <p>{{user.message}}</p>
           <div class="equalizer">
               <span class="column" id="purple"></span>
               <span class="column" id="blue"></span>
@@ -37,20 +38,21 @@
               <span class="column" id="red"></span>
               <span id="black"></span>
               <br/>
-              <input type="button" onclick="JavaScript: play();" value="Play" id=button>
+              <button type="button" value="New Enemy" class="new-battle-button">New Enemy</button>
+              <a href="/"><button type="button">Start a New Character</a>
           </div>
         </div>
       </div>
       <div class="tile is-3 is-vertical is-parent">
         <article class="tile is-child green_0 is-12">
-          <p class="green_1">enemy.name</p>
+          <p class="green_1">{{enemy.name}}</p>
           <figure class="image is-1by1 green_3">
             <img src="../assets/img/note_green.png">
           </figure>
           <div class="tile is-child box player is-3">
-              <img src="../assets/img/health.png"><p id="health0">{{enemy.hp}} / {{enemy.maxHp}}</p>
-              <img src="../assets/img/damage.png"><p id="damage0">{{enemy.physical}}</p>
-              <img src="../assets/img/defense.png"><p id="defense0">{{enemy.defense}}</p>
+              <img src="../assets/img/health.png"><p id="health0">HP: {{enemy.hp}} / {{enemy.maxHp}}</p>
+              <img src="../assets/img/damage.png"><p id="damage0"> Physical: {{enemy.physical}}</p>
+              <img src="../assets/img/defense.png"><p id="defense0"> Defense: {{enemy.defense}}</p>
           </div>
         </article>
         <div class="tile is-child box green_0">
@@ -68,22 +70,52 @@
 
 {{!-- listeners to send the PUT requests when attack buttons are clicked. I don't know how to serve this dynamically so here you go. --}}
     <script type="text/javascript">
-        alert("battle.handlebars loaded script tag");
         $(document).on("click", ".ability-button", function(event) {
-          event.preventDefault();
+            event.preventDefault();
 
-          attackName = this.name;
-          var userId = {{user.id}} - 1;
-          var enemyId = {{enemy.id}} - 1;
+            attackName = this.name;
+            var userId = {{user.id}} - 1;
+            var enemyId = {{enemy.id}} - 1;
 
-          $.ajax({
-            method: "PUT",
-            url: "/battle/" + userId + "&" + enemyId + "&" + attackName
-          }).then(function(data) {
-            location.reload();
-          })
+            $.ajax({
+              method: "PUT",
+              url: "/battle/" + userId + "&" + enemyId + "&" + attackName
+            }).then(function(data) {
+              location.reload();
 
-      });
+            })
+
+          });
+          // listener to start a new game with the same character
+          $(document).on("click", ".new-battle-button", function(event) {
+              event.preventDefault();
+              // randomly generate a new enemy ID and make sure it isn't the current character
+              // function newEnemy(){
+              //   enemyId = Math.floor(Math.random() * Math.floor({{length}}-1));
+              //
+              //   if(enemyId === userId-1){
+              //     newEnemy();
+              //   }
+              //
+              // };
+
+              // make sure both the user and new enemy are at full health
+
+
+              var userId = {{user.id}} - 1;
+              var enemyId = {{random}};
+
+              $.ajax({
+                method: "PUT",
+                url: "/battle/" + userId + "&" + enemyId + "&revive"
+              }).then(function(data) {
+                location.href = "/battle/" + userId + "&" + enemyId;
+                load();
+
+              })
+
+            });
+
 
     </script>
 

@@ -23,7 +23,8 @@ module.exports = {
         defense: 20,
         alive: true,
         songUrl: "https://www.google.com",
-        imageSRC: "https://images.google.com"
+        imageSRC: "https://images.google.com",
+        message: ""
       },
     {
       name: 'Steve',
@@ -41,7 +42,8 @@ module.exports = {
       defense: 40,
       alive: true,
       songUrl: "https://www.google.com",
-      imageSRC: "https://images.google.com"
+      imageSRC: "https://images.google.com",
+      message: ""
     }], {});
 
   },

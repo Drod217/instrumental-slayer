@@ -1,25 +1,25 @@
 // var slayer = require('./slayer.js');
 console.log("You connected character")
-var Character = function(name, charClass, tempo, songLength, songUrl, imageSrc){
+var Character = function(name, charClass, tempo, duration){
   this.name = name;
   this.charClass = charClass;
   this.tempo = tempo;
-  this.songLength = songLength;
-  this.beats = (songLength/60) * tempo;
+  this.duration = duration;
+  this.beats = (duration/60) * tempo;
   this.charXP = 0;
   this.alive = true;
   this.charLevel = 1;
-  this.songUrl = songUrl;
-  this.imageSrc = imageSrc;
+  // this.songUrl = songUrl;
+  // this.imageSrc = imageSrc;
 
 }
 
 Character.prototype.startingStats = function() {
 // functions to determine HP, speed, magic, defense, etc.
-  this.hp = 50 + (this.songLength / 2);
-  this.maxHp = 50 + (this.songLength / 2);
-  this.defense = 20 + (this.songLength/20);
-  this.speed = 30 - (this.songLength/15);
+  this.hp = 50 + (this.duration / 2);
+  this.maxHp = 50 + (this.duration / 2);
+  this.defense = 20 + (this.duration/20);
+  this.speed = 30 - (this.duration/15);
   this.magic = this.beats / 50 + 20;
   this.physical = this.beats / 30;
 
@@ -156,7 +156,7 @@ Character.prototype.revive = function(){
 
 // export the character object
 //
-module.exports = Character;
+// module.exports = Character;
 
 
 // // tests for console -

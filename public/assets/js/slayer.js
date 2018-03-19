@@ -77,7 +77,7 @@ var calcTempo = function (buffer) {
 
 var context = new AudioContext();
 // turning off
-context.decodeAudioData(data, calcTempo);
+// context.decodeAudioData(data, calcTempo);
 
 // test();
 
@@ -132,5 +132,5 @@ var calcTempo2 = function (buffer) {
 
 var context = new AudioContext();
 // turning off
-context.decodeAudioData(data, calcTempo2);
+// context.decodeAudioData(data, calcTempo2);
 

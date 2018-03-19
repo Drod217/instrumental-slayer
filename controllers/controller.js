@@ -92,6 +92,8 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
     // console.log("User Char from Params is: " + JSON.stringify(data[userChar]));
     // console.log("Enemy Char from Params is: " + JSON.stringify(data[enemyChar]));
     var message = "Your character " +  data[userChar]["name"] + " is battling with " + data[enemyChar]["name"] + "!";
+    var userImage = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+    var enemyImage = "../assets/img/" + data[enemyChar]["imageSRC"] + ".png";
 
     // // use the Character constructor to make the user object
     //
@@ -113,7 +115,9 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
       enemy: data[enemyChar],
       length: data.length,
       message: message,
-      random: random
+      random: random,
+      userImage: userImage,
+      enemyImage: enemyImage
 
     };
 
@@ -139,6 +143,8 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
 
     var user = data[userChar];
     var enemy = data[enemyChar];
+    var userImage = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+    var enemyImage = "../assets/img/" + data[enemyChar]["imageSRC"] + ".png";
 
 // we want to grab the HP at the start of the turn so that if you block, we know what the health was initially
     var originalUserHp = user.hp
@@ -254,7 +260,9 @@ router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
         user: user,
         enemy: enemy,
         message: message,
-        length: data.length
+        length: data.length,
+        userImage: userImage,
+        enemyImage: enemyImage
 
       };
 // presently just to end the request with the new enemy and user data

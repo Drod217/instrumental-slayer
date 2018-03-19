@@ -7,7 +7,7 @@
         <article class="tile is-child yellow_0 is-12">
           <p class="yellow_1">{{user.name}}</p>
           <figure class="image is-1by1 yellow_3">
-            <img src="../assets/img/note_yellow.png">
+            <img src="{{userImage}}"></br>
           </figure>
           <div class="tile is-child box player is-3">
               <img src="../assets/img/health.png"><p id="health0">HP: {{user.hp}} / {{user.maxHp}}</p>
@@ -46,6 +46,7 @@
       <div class="tile is-3 is-vertical is-parent">
         <article class="tile is-child green_0 is-12">
           <p class="green_1">{{enemy.name}}</p>
+          <img src="{{enemyImage}}"></br>
           <figure class="image is-1by1 green_3">
             <img src="../assets/img/note_green.png">
           </figure>

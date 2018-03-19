@@ -156,7 +156,7 @@ Character.prototype.revive = function(){
 
 // export the character object
 //
-module.exports = Character;
+// module.exports = Character;
 
 
 // // tests for console -

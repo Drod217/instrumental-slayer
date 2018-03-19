@@ -192,6 +192,11 @@ h2 {
   background: black;
 }
 
+.stat-div {
+  background: white;
+  color: white;
+}
+
 /* ----- EQUALIZER CSS SECTION BELOW ---- */
 
 .equalizer {
@@ -251,7 +256,7 @@ h2 {
 
 
 
-/* 
+/*
 
 .is-link, .is-success {
   color: black;

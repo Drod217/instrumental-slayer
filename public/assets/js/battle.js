@@ -1,2 +1,2 @@
-console.log("linked the battle.js");
-alert("It's linked!");
+// console.log("linked the battle.js");
+// alert("It's linked!");

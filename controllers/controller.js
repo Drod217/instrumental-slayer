@@ -23,6 +23,61 @@ router.get("/", function(req, res) {
   });
 });
 
+// a get route to display a character stats screen
+
+router.get("/stats/:userId", function(req, res) {
+  db.Char.findAll({}).then(function(data) {
+    var userChar = req.params.userId;
+    console.log(JSON.stringify(data[userChar]));
+    var image = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+    var random = Math.floor(Math.random() * data.length);
+
+
+    var charObject = {
+      Char: data,
+      user: data[userChar],
+      image: image,
+      random: random
+    };
+
+    return res.render("character", charObject);
+
+  })
+});
+
+//  a put route to update one of our four char stats {
+router.put("/stats/:userId", function(req,res){
+  db.Char.findAll({}).then(function(data) {
+    var userChar = req.params.userId;
+    console.log(JSON.stringify(data[userChar]));
+    var image = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+    var random = Math.floor(Math.random() * data.length);
+
+    var user = data[userChar];
+    // create the update object
+    var newUserData = {
+      id: req.body.id,
+      name: req.body.name,
+      tempo: req.body.tempo,
+      duration: req.body.duration,
+      songUrl: req.body.songUrl,
+      songName: req.body.songName
+    }
+    // this is nonsense, but here we're actually calling the javascript Character constructor to use its methods to generate the rest of our new stats.
+      var updatedChar = new Character(req.body.name, user.charClass, req.body.tempo, req.body.duration);
+      updatedChar.startingStats();
+      updatedChar.classStats();
+      console.log(JSON.stringify(updatedChar));
+
+    // update here
+    // db.Char.update(newUserData, {where: {name: user.name} })
+    //   .then(updatedUser => {
+    //     // console.log(updatedUser)
+    //   });
+
+})
+});
+
 
 
 // using routes for battle

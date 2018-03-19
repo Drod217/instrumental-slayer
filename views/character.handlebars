@@ -14,28 +14,23 @@
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
-            <div class="tile is-parent is-vertical is-2">
-              <p class="stats">Physical Strength: {{user.physical}}</p>
-              <p class="stats">Magic Ability: {{user.magic}}</p>
+            <div class="tile is-parent is-vertical is-4">
+              <p class="stats">Class: {{user.charClass}}</p>
+              <p class="stats_hp">Total HP: {{user.hp}}</p>
+              <p class="stats_phy">Physical Strength: {{user.physical}}</p>
+              <p class="stats_mag">Magic Ability: {{user.magic}}</p>
+              <p class="stats_spd">Speed: {{user.speed}}</p>
+              <p class="stats_def">Defense: {{user.defense}}</p>
             </div>
             <div class="tile is-parent is-vertical">
 
             </div>
-            <div class="tile is-parent is-vertical middle stat-div">
-                <p class="charclass">Class: {{user.charClass}}</p>
-                <p class="hp">Total HP: {{user.hp}}</p>
+            <div class="tile is-parent is-vertical stat-div">
                 <p class="current-song">Your song: {{user.songUrl}}</p>
-
             </div>
             <div class="tile is-parent is-vertical">
 
             </div>
-            <div class="tile is-parent is-vertical is-2" style="color: white">
-              <p class="stats">Speed: {{user.speed}}</p>
-              <p class="stats">Defense: {{user.defense}}</p>
-
-            </div>
-
     <script>
             $(document).on("click", ".new-battle-button", function(event) {
                 event.preventDefault();

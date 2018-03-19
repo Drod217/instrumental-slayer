@@ -1,15 +1,16 @@
 .container {
   background: black;
 }
-/* .tile {
-  border: 2px solid white;
-} */
+.tile {
+  margin-top: 20px;
+}
 .entire, .notification {
     margin-top: 1rem;
     text-align: center;
     background: black;
     color: darkorange;
 }
+
 #start {
   background: darkorange;
   font-size: 2rem;
@@ -194,13 +195,52 @@ h2 {
 
 .stat-div {
   background: black;
+  color: white;
 }
 
+/* .tile {
+  border: 1px solid grey;
+  border-radius: 30px;
+} */
 .stats {
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: 'Cagliostro', sans-serif;
 }
+
+.stats_hp {
+  color: red;
+  font-size: 1rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+.stats_phy {
+  color: lightskyblue;
+  font-size: 1rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.stats_mag {
+  color: blue;
+  font-size: 1.2rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.stats_spd {
+  color: yellow;
+  font-size: 1rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+.stats_def {
+  color: purple;
+  font-size: 1.2rem;
+  font-family: 'Cagliostro', sans-serif;
+}
+
+/* image {
+  width: 50%;
+  height: 50%;
+} */
 
 /* ----- EQUALIZER CSS SECTION BELOW ---- */
 

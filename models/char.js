@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     charClass: DataTypes.STRING,
     tempo: DataTypes.INTEGER,
-    songLength: DataTypes.INTEGER,
+    duration: DataTypes.INTEGER,
     beats: DataTypes.INTEGER,
     charXP: DataTypes.INTEGER,
     charLevel: DataTypes.INTEGER,
@@ -17,7 +17,9 @@ module.exports = function(sequelize, DataTypes) {
     defense: DataTypes.INTEGER,
     alive: DataTypes.BOOLEAN,
     songUrl: DataTypes.STRING,
+    songName: DataTypes.STRING,
     imageSRC: DataTypes.STRING,
+    message: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE,
       field: 'createdAt',

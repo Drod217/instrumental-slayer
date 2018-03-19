@@ -1,63 +1,70 @@
 {{!-- this is the character select screen (also select music here) --}}
     <div class="container">
-      <div class="notification">
-        <h1>Welcome to Instrumental Slayer</h1>
-        <h2>Click to continue to your musical destiny</h2>
+      <div class="notification has-text-centered">
+        <h1>{{user.name}}'s stats.</h1>
+
+        {{!-- <script id="t" type="text/x-handlebars-template"> --}}
+          <img src="{{image}}"></br>
+          <a href="/"><button class="button is-dark">Pick again!</button></a>
+          <button class="button is-dark new-battle-button">Go to battle!</button>
+
+
+
       </div>
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
-            <div class="tile is-parent is-vertical is-2">
+            <div class="tile is-parent is-vertical is-2" style="color: white">
+              <p>Physical Strength: {{user.physical}}</p>
+              <p>Magic Ability: {{user.magic}}</p>
+            </div>
+            <div class="tile is-parent is-vertical">
+
+            </div>
+            <div class="tile is-parent is-vertical middle stat-div" style="color: white">
+                <p class="charclass">Class: {{user.charClass}}</p>
+                <p class="hp">Total HP: {{user.hp}}</p>
+                <p class="current-song">Your song: {{user.songUrl}}</p>
 
             </div>
             <div class="tile is-parent is-vertical">
-              <article class="tile is-child yellow_0 is-12">
-                <p class="yellow_1">Double Drop Marvin</p>
-                <figure class="image is-1by1 yellow_3">
-                  <img src="./assets/img/note_yellow.png">
-                </figure>
-                <p class="yellow_2">Uses Heavy Beats to demolish the enemy! (fighter)</p>
-              </article>
-              <article class="tile is-child blue_0 is-12">
-                <p class="blue_1">Straight Edge Steve</p>
-                <figure class="image is-1by1 blue_3">
-                  <img src="./assets/img/note_blue.png">
-                </figure>
-                <p class="blue_2">Uses Mellow Keys to tranquilize the enemy! (mage)</p>
-              </article>
-            </div>
-            <div class="tile is-parent is-vertical middle">
-                <p class="songtitle">Pick your SONG to use in battle</p>
-                <div class="songlist">List of Songs</div>
-                <button id="start">SELECT</button>
-            </div>
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child red_0 is-12">
-                <p class="red_1">Flashy Francine</p>
-                <figure class="image is-1by1 red_3">
-                  <img src="./assets/img/note_red.png">
-                </figure>
-                <p class="red_2">Uses Tempo to barrage the enemy! (rogue)</p>
-              </article>
-              <article class="tile is-child green_0 is-12">
-                <p class="green_1">Peeky Paula</p>
-                <figure class="image is-1by1 green_3">
-                  <img src="./assets/img/note_green.png">
-                </figure>
-                <p class="green_2">Uses Harmony to put down the enemy! (cleric)</p>
-              </article>
-            </div>
-            <div class="tile is-parent is-vertical is-2">
 
             </div>
-            {{#each Character}}
-                <div>
-                    <h1>Class {{this.class}}</h1>
-                    <img src="./public/assets/img"{{this.image}}>
-                    <p>Base Stats{{this.stats}}</p>
-                    <p>Abilities{{this.abilities}}</p>
-                </div>
+            <div class="tile is-parent is-vertical is-2" style="color: white">
+              <p>Speed: {{user.speed}}</p>
+              <p>Defense: {{user.defense}}</p>
 
-                <button href='battle.handlebars'></button>
-            {{/each}}
+            </div>
 
+    <script>
+            $(document).on("click", ".new-battle-button", function(event) {
+                event.preventDefault();
+                // randomly generate a new enemy ID and make sure it isn't the current character
+                // function newEnemy(){
+                //   enemyId = Math.floor(Math.random() * Math.floor({{length}}-1));
+                //
+                //   if(enemyId === userId-1){
+                //     newEnemy();
+                //   }
+                //
+                // };
+
+                // make sure both the user and new enemy are at full health
+
+
+                var userId = {{user.id}} - 1;
+                var enemyId = {{random}};
+
+                $.ajax({
+                  method: "PUT",
+                  url: "/battle/" + userId + "&" + enemyId + "&revive"
+                }).then(function(data) {
+                  location.href = "/battle/" + userId + "&" + enemyId;
+                  load();
+
+                })
+
+              });
+
+
+      </script>

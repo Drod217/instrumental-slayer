@@ -14,11 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "slayer_db",
-    "host": "127.0.0.1",
-    "use_env_variable":"JawsDB_URL",
+    "username": "u2ragqy3bmaeghae",
+    "password": "u612r7fafa24fr0t",
+    "database": "ugmmhfe61fu6s7r2",
+    "host": "k3xio06abqa902qt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable":"JAWSDB_URL",
     "dialect": "mysql"
   }
 }

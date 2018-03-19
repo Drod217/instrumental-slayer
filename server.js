@@ -164,8 +164,7 @@ var routes = require("./controllers/controller.js");
 app.use("/", routes);
 
 db.sequelize.sync().then(function() {
-    app.listen(PORT, function() {
-      console.log("App listening on PORT " + PORT);
-      console.log(tempo);
-    });
+  app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
   });

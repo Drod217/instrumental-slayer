@@ -28,7 +28,7 @@ router.get("/", function(req, res) {
 router.get("/stats/:userId", function(req, res) {
   db.Char.findAll({}).then(function(data) {
     var userChar = req.params.userId;
-    console.log(JSON.stringify(data[userChar]));
+    // console.log(JSON.stringify(data[userChar]));
     var userImage = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
     var random = Math.floor(Math.random() * data.length);
 
@@ -98,11 +98,9 @@ router.put("/stats/:userId", function(req,res){
     };
 
 
-    // this is nonsense, but here we're actually calling the javascript Character constructor to use its methods to generate the rest of our new stats.
-    // user.startingStats();
-    // user.classStats();
-    console.log("The User var: " + JSON.stringify(user));
-    console.log("The new user data! " + JSON.stringify(newUserData));
+
+    // console.log("The User var: " + JSON.stringify(user));
+    // console.log("The new user data! " + JSON.stringify(newUserData));
 
     // update here
     db.Char.update(newUserData, {where: {name: user.name} })
@@ -131,7 +129,7 @@ router.put("/stats/:userId", function(req,res){
 router.get("/battle/:userId&:enemyId", function(req, res) {
   //console.log(db.Char);
   db.Char.findAll({}).then(function(data) {
-    console.log("data" + JSON.stringify(data));
+    // console.log("data" + JSON.stringify(data));
     var userChar = req.params.userId;
     var enemyChar = req.params.enemyId;
 // from this we're using the first id in the URL to pick the user's fighter, and the second id to pick the enemy
@@ -359,23 +357,3 @@ router.post("/", function(req, res) {
 
 // Export routes for server.js to use.
 module.exports = router;
-
-
-
-//  Nonsense I am not using presently but might soon
-
-
-    // var user = new Character(userObj.name, userObj.charClass, userObj.tempo, userObj.songLength, userObj.songUrl, userObj.imageSrc);
-    // // these methods are defined in the Character constructor. This is presently redundant, but I am sort of in the "whatever actually works" mode of development
-    // user.startingStats();
-    // user.classStats();
-    // console.log("This is the user char with all stats populated: " + JSON.stringify(user));
-    //
-    // // use the Character constructor to make the enemy object
-    //
-    // var enemyObj = data[enemyChar];
-    //
-    // var enemy = new Character(enemyObj.name, enemyObj.charClass, enemyObj.tempo, enemyObj.songLength, enemyObj.songUrl, enemyObj.imageSrc);
-    // enemy.startingStats();
-    // enemy.classStats();
-    // console.log("This is the enemy char with all stats populated: " + JSON.stringify(enemy));

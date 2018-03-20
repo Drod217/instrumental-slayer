@@ -232,7 +232,7 @@ $(document).ready(function(){
           url: "/stats/" + userId,
           data: newChar
         }).then(function(data) {
-          alert(JSON.stringify(newChar));
+          // alert(JSON.stringify(newChar));
           location.href = "/stats/" + userId;
           load();
         })

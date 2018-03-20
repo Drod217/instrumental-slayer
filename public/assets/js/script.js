@@ -174,7 +174,14 @@ var songArr = [
   }
 ]
 
-var newChar = {}
+var newChar = {};
+var newCharacterData = {};
+
+var characterPicked = false;
+var songPicked = false;
+
+var userId = 0;
+var enemyId = 1;
 
 $(document).ready(function(){
     $(".eq").hide();
@@ -183,6 +190,7 @@ $(document).ready(function(){
       // alert("Song selection: " + songArr[ID]["name"] + ", Tempo & Duration =" + songArr[ID]["tempo"] + " & " + songArr[ID]["duration"]);
       var newText = songArr[ID]["name"];
       $(".current-song").text(newText);
+      songPicked = true;
 
       // update the char object we're going to send
       newChar.tempo = songArr[ID]["tempo"];
@@ -201,15 +209,39 @@ $(document).ready(function(){
       var newText = $(this).children("p:first").text()
       $(".current-char").text(newText);
       newChar.name = newText;
+      characterPicked = true;
       newChar.id = $(this).attr("char-value");
+      newChar.charClass = $(this).attr("char-class");
       // alert(newText)
     });
 
     // submit button to take you to char stats
     $(".roll-stats").click(function(){
-      alert("Roll stats!");
+      if(songPicked && characterPicked){
 
-      alert(newUserData.name);
+        var userId = newChar.id;
+        newCharacterData.name = newChar.name;
+        // var newCharacterData = {
+        //   name = newChar.name;
+        // };
+        // alert(JSON.stringify(newCharacterData));
+        // alert(newCharacterData.name);
+
+        $.ajax({
+          method: "PUT",
+          url: "/stats/" + userId,
+          data: newChar
+        }).then(function(data) {
+          alert(JSON.stringify(newChar));
+          location.href = "/stats/" + userId;
+          load();
+        })
+
+
+      } else {
+        alert("Please pick a character and song!");
+
+      }
     });
   //
 

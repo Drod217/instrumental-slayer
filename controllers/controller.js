@@ -28,15 +28,15 @@ router.get("/", function(req, res) {
 router.get("/stats/:userId", function(req, res) {
   db.Char.findAll({}).then(function(data) {
     var userChar = req.params.userId;
-    console.log(JSON.stringify(data[userChar]));
-    var image = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+    // console.log(JSON.stringify(data[userChar]));
+    var userImage = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
     var random = Math.floor(Math.random() * data.length);
 
 
     var charObject = {
       Char: data,
       user: data[userChar],
-      image: image,
+      userImage: userImage,
       random: random
     };
 
@@ -50,31 +50,75 @@ router.put("/stats/:userId", function(req,res){
   db.Char.findAll({}).then(function(data) {
     var userChar = req.params.userId;
     console.log(JSON.stringify(data[userChar]));
-    var image = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
+
     var random = Math.floor(Math.random() * data.length);
 
     var user = data[userChar];
+    var userImage = "../assets/img/" + data[userChar]["imageSRC"] + ".png";
     // create the update object
+
+    user.tempo = Math.round(req.body.tempo);
+    user.duration = Math.round(req.body.duration);
+
+    user.songUrl = req.body.songUrl;
+    user.songName = req.body.songName;
+
+    user.getBeats();
+    user.startingStats();
+    user.classStats();
+
+
+    // var newUserData = {
+    //   id: req.body.id,
+    //   name: req.body.name,
+    //   charClass: req.body.charClass,
+    //   tempo: req.body.tempo,
+    //   duration: req.body.duration,
+    //   songUrl: req.body.songUrl,
+    //   songName: req.body.songName
+    // }
+    //
+    // newUserData.beats = newUserData.duration/60 * newUserData.tempo;
+
     var newUserData = {
-      id: req.body.id,
-      name: req.body.name,
-      tempo: req.body.tempo,
-      duration: req.body.duration,
-      songUrl: req.body.songUrl,
-      songName: req.body.songName
-    }
-    // this is nonsense, but here we're actually calling the javascript Character constructor to use its methods to generate the rest of our new stats.
-      var updatedChar = new Character(req.body.name, user.charClass, req.body.tempo, req.body.duration);
-      updatedChar.startingStats();
-      updatedChar.classStats();
-      console.log(JSON.stringify(updatedChar));
+      tempo: user.tempo,
+      duration: user.duration,
+      beats: user.beats,
+      hp: user.hp,
+      maxHp: user.maxHp,
+      physical: user.physical,
+      magic: user.magic,
+      speed: user.speed,
+      defense: user.defense,
+      alive: user.alive,
+      songUrl: user.songUrl,
+      songName: user.songName,
+      imageSRC: user.imageSRC,
+      message: user.message
+    };
+
+
+
+    // console.log("The User var: " + JSON.stringify(user));
+    // console.log("The new user data! " + JSON.stringify(newUserData));
 
     // update here
-    // db.Char.update(newUserData, {where: {name: user.name} })
-    //   .then(updatedUser => {
-    //     // console.log(updatedUser)
-    //   });
+    db.Char.update(newUserData, {where: {name: user.name} })
+      .then(updatedUser => {
+        // console.log(updatedUser)
+      });
 
+
+    var charObject = {
+      Char: data,
+      user: data[userChar],
+      length: data.length,
+      message: user.message,
+      random: random,
+      userImage: userImage
+
+    };
+    return res.render("character", charObject);
 })
 });
 
@@ -85,7 +129,7 @@ router.put("/stats/:userId", function(req,res){
 router.get("/battle/:userId&:enemyId", function(req, res) {
   //console.log(db.Char);
   db.Char.findAll({}).then(function(data) {
-    console.log("data" + JSON.stringify(data));
+    // console.log("data" + JSON.stringify(data));
     var userChar = req.params.userId;
     var enemyChar = req.params.enemyId;
 // from this we're using the first id in the URL to pick the user's fighter, and the second id to pick the enemy
@@ -130,7 +174,7 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
 
 router.put("/battle/:userId&:enemyId&:attackName", function(req, res) {
   db.Char.findAll({}).then(function(data) {
-    console.log("data" + JSON.stringify(data));
+    // console.log("data" + JSON.stringify(data));
     var userChar = req.params.userId;
     var enemyChar = req.params.enemyId;
     var attackName = req.params.attackName;
@@ -313,23 +357,3 @@ router.post("/", function(req, res) {
 
 // Export routes for server.js to use.
 module.exports = router;
-
-
-
-//  Nonsense I am not using presently but might soon
-
-
-    // var user = new Character(userObj.name, userObj.charClass, userObj.tempo, userObj.songLength, userObj.songUrl, userObj.imageSrc);
-    // // these methods are defined in the Character constructor. This is presently redundant, but I am sort of in the "whatever actually works" mode of development
-    // user.startingStats();
-    // user.classStats();
-    // console.log("This is the user char with all stats populated: " + JSON.stringify(user));
-    //
-    // // use the Character constructor to make the enemy object
-    //
-    // var enemyObj = data[enemyChar];
-    //
-    // var enemy = new Character(enemyObj.name, enemyObj.charClass, enemyObj.tempo, enemyObj.songLength, enemyObj.songUrl, enemyObj.imageSrc);
-    // enemy.startingStats();
-    // enemy.classStats();
-    // console.log("This is the enemy char with all stats populated: " + JSON.stringify(enemy));

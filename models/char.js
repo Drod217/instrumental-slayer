@@ -36,6 +36,59 @@ module.exports = function(sequelize, DataTypes) {
   Char.prototype.sayName = function () {
     console.log("I can say names from the char sequelize model! I am " + this.name);
   }
+
+
+  // Methods to generate new stats based on songs and charClass
+
+  Char.prototype.getBeats = function() {
+  // functions to determine HP, speed, magic, defense, etc.
+    this.beats = Math.round((this.duration/60) * this.tempo);
+
+  }
+
+  Char.prototype.startingStats = function() {
+  // functions to determine HP, speed, magic, defense, etc.
+    this.hp = Math.round(50 + (this.duration / 2));
+    this.maxHp = Math.round(50 + (this.duration / 2));
+    this.defense = Math.round(20 + (this.duration/20));
+    this.speed = Math.round(30 - (this.duration/15));
+    this.magic = Math.round(this.beats / 50 + 20);
+    this.physical = Math.round(this.beats / 30);
+
+  }
+
+
+  Char.prototype.classStats = function() {
+    if(this.charClass === "mage") {
+      this.hp -= 10;
+      this.maxHp -= 10;
+      this.defense  -= 10;
+      this.speed += 5;
+      this.magic += 20;
+      this.physical -= 10;
+    } else if (this.charClass === "fighter") {
+      this.hp += 20;
+      this.maxHp += 20;
+      this.defense += 10;
+      this.speed += 5;
+      this.magic -= 15;
+      this.physical += 15;
+    } else if (this.class === "rogue" ) {
+      this.hp -= 5;
+      this.maxHp -= 5;
+      this.speed += 15;
+      this.magic -= 5;
+    } else if (this.class === "cleric") {
+      this.hp += 15;
+      this.maxHp += 15;
+      this.defense += 5;
+      this.magic += 12;
+    }
+
+  }
+
+
+
   // a basic physical attack
   Char.prototype.physAttack = function(enemy){
     var attack = 0;
@@ -68,6 +121,7 @@ module.exports = function(sequelize, DataTypes) {
     enemy.deathCheck();
 
   }
+
   // a special attack, so we will take into account
   Char.prototype.specAttack = function(enemy){
     var attack = 0;

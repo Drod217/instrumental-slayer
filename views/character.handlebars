@@ -4,7 +4,7 @@
         <h1>Statistics for {{user.name}}</h1>
 
         {{!-- <script id="t" type="text/x-handlebars-template"> --}}
-          <img src="{{user.image}}"></br>
+          <img src="{{userImage}}"></br>
           <a href="/"><button class="button is-dark">Pick again!</button></a>
           <button class="button is-dark new-battle-button">Go to battle!</button>
 
@@ -29,7 +29,7 @@
               <p class="stats_spd">Speed: {{user.speed}}</p>
               <p class="stats_def">Defense: {{user.defense}}</p>
             </div>
-            
+
             <div class="tile is-parent is-vertical stat-div songbox">
                 <p class="current-song">Your song: {{user.songUrl}}</p>
             </div>
@@ -39,19 +39,6 @@
     <script>
             $(document).on("click", ".new-battle-button", function(event) {
                 event.preventDefault();
-                // randomly generate a new enemy ID and make sure it isn't the current character
-                // function newEnemy(){
-                //   enemyId = Math.floor(Math.random() * Math.floor({{length}}-1));
-                //
-                //   if(enemyId === userId-1){
-                //     newEnemy();
-                //   }
-                //
-                // };
-
-                // make sure both the user and new enemy are at full health
-
-
                 var userId = {{user.id}} - 1;
                 var enemyId = {{random}};
 

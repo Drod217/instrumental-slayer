@@ -1,15 +1,15 @@
 
-<div class="tile is-ancestor">
-      <div class="tile is-parent is-vertical is-1">
+<div class="tile is-ancestor background2">
+      {{!-- <div class="tile is-parent is-vertical is-1">
 
-      </div>
+      </div> --}}
       <div class="tile is-3 is-vertical is-parent">
         <article class="tile is-child yellow_0 is-12">
           <p class="yellow_1">{{user.name}}</p>
           <figure class="image is-1by1 yellow_3">
             <img src="{{userImage}}">
           </figure>
-          <div class="tile is-child box player is-12">
+          <div class="tile is-child statbox yellow_3 is-12">
               <p class="stats">Class: {{user.charClass}}</p>
               <p class="stats_hp">Total HP: {{user.hp}} / {{user.maxHp}}</p>
               <p class="stats_phy">Physical Strength: {{user.physical}}</p>
@@ -26,7 +26,7 @@
           <button class="button is-success ability-box4 ability-button" id="ability3" name="block">Block</button>
         </div>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <div class="tile is-child box middle">
           <p class="title">Battlefield</p>
           <p>The battle between {{user.name}} and {{enemy.name}} is under way!</p>
@@ -40,9 +40,11 @@
               <span class="column" id="orange"></span>
               <span class="column" id="red"></span>
               <span id="black"></span>
-              <br/>
-              <button type="button" value="New Enemy" class="new-battle-button">New Enemy</button>
-              <a href="/"><button type="button">Start a New Character</a>
+          </div>
+          <div class="tile is-parent is-vertical is-6 buttonbox">
+            <input type="button" onclick="JavaScript: play();" value="Play" id=button>
+            <button type="button" value="New Enemy" class="new-battle-button">New Enemy</button>
+            <a href="/"><button type="button">Start a New Character</a>
           </div>
         </div>
       </div>
@@ -52,7 +54,7 @@
           <figure class="image is-1by1 green_3">
             <img src="{{enemyImage}}">
           </figure>
-          <div class="tile is-child box player is-12">
+          <div class="tile is-child statbox green_3 is-12">
               <p class="stats">Class: {{enemy.charClass}}</p>
               <p class="stats_hp">Total HP: {{enemy.hp}} / {{enemy.maxHp}}</p>
               <p class="stats_phy">Physical Strength: {{enemy.physical}}</p>

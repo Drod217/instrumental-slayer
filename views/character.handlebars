@@ -1,20 +1,27 @@
 {{!-- this is the character select screen (also select music here) --}}
-    <div class="container">
-      <div class="notification has-text-centered">
-        <h1>{{user.name}}'s stats.</h1>
+    <div class="container background">
+      <div class="notification has-text-centered transparent">
+        <h1>Statistics for {{user.name}}</h1>
 
         {{!-- <script id="t" type="text/x-handlebars-template"> --}}
           <img src="{{user.image}}"></br>
           <a href="/"><button class="button is-dark">Pick again!</button></a>
           <button class="button is-dark new-battle-button">Go to battle!</button>
 
-
-
       </div>
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
-            <div class="tile is-parent is-vertical is-4">
+            <div class="tile is-parent is-vertical is-1">
+
+            </div>
+            <div class="tile is-parent is-vertical is-3">
+              <p class="yellow_1">{{user.name}}</p>
+                <figure class="image is-1by1 yellow_3">
+                  <img src="{{userImage}}">
+                </figure>
+            </div>
+            <div class="tile is-parent is-vertical is-4 statbox">
               <p class="stats">Class: {{user.charClass}}</p>
               <p class="stats_hp">Total HP: {{user.hp}}</p>
               <p class="stats_phy">Physical Strength: {{user.physical}}</p>
@@ -22,10 +29,8 @@
               <p class="stats_spd">Speed: {{user.speed}}</p>
               <p class="stats_def">Defense: {{user.defense}}</p>
             </div>
-            <div class="tile is-parent is-vertical">
-
-            </div>
-            <div class="tile is-parent is-vertical stat-div">
+            
+            <div class="tile is-parent is-vertical stat-div songbox">
                 <p class="current-song">Your song: {{user.songUrl}}</p>
             </div>
             <div class="tile is-parent is-vertical">

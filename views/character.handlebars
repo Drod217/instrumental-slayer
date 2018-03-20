@@ -4,7 +4,6 @@
         <h1>Statistics for {{user.name}}</h1>
 
         {{!-- <script id="t" type="text/x-handlebars-template"> --}}
-          <img src="{{userImage}}"></br>
           <a href="/"><button class="button is-dark">Pick again!</button></a>
           <button class="button is-dark new-battle-button">Go to battle!</button>
 
@@ -30,8 +29,9 @@
               <p class="stats_def">Defense: {{user.defense}}</p>
             </div>
 
-            <div class="tile is-parent is-vertical stat-div songbox">
-                <p class="current-song">Your song: {{user.songUrl}}</p>
+            <div class="tile is-parent is-vertical is-3 stat-div songbox">
+                <p class="songz">Selected Song</p>
+                <p class="current-song">{{user.songName}}</p>
             </div>
             <div class="tile is-parent is-vertical">
 

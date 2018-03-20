@@ -30,7 +30,8 @@
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.1",
     "requirejs": "^2.3.5",
-    "sequelize": "^4.36.1",
+    "sequelize": "^4.37.3",
+    "sequelize-cli": "^4.0.0",
     "update": "^0.7.4",
     "web-audio-api": "^0.2.2"
   },

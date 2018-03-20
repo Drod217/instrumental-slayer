@@ -31,6 +31,9 @@
 //    15: [147.58, 199.63], 16: [133.69, 198.63], 17: [171.91, 247.70],
 //    18: [98.75, 281.00], 19: [151.69, 272.68]};
 
+var soundTag = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"];
+
+
 var songArr = [
   {
     name: "Mirrors",
@@ -187,11 +190,11 @@ $(document).ready(function(){
     $(".eq").hide();
     $(".songlist li").click(function(){
       var ID = $(this).attr('id');
+      
       // alert("Song selection: " + songArr[ID]["name"] + ", Tempo & Duration =" + songArr[ID]["tempo"] + " & " + songArr[ID]["duration"]);
       var newText = songArr[ID]["name"];
       $(".current-song").text(newText);
       songPicked = true;
-
       // update the char object we're going to send
       newChar.tempo = songArr[ID]["tempo"];
       newChar.duration = songArr[ID]["duration"];
@@ -203,6 +206,7 @@ $(document).ready(function(){
       // $(".eq").show();
       // $(".songtitle").hide();
       // $("#button").hide();
+    
     });
     // update current character selection with current click
     $(".char-article").click(function(){

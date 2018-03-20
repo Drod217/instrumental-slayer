@@ -11,6 +11,39 @@
     color: darkorange;
 }
 
+.transparent {
+  background: transparent;
+}
+
+.background {
+  background-size: cover;
+  width: 100%;
+  background-image: url("../img/background.png");
+}
+
+.background2 {
+  background-size: cover;
+  width: 100%;
+  background-image: url("../img/background2.png");
+}
+
+.statbox {
+  margin-left: 3rem;
+  background: black;
+  border-radius: 2rem;
+  border: 0.2rem solid grey;
+}
+.buttonbox {
+  margin-left: 10rem;
+}
+
+.songbox {
+  margin-left: 3rem;
+  background: black;
+  border-radius: 2rem;
+  border: 0.2rem solid grey;
+}
+
 #start {
   background: darkorange;
   font-size: 2rem;
@@ -167,7 +200,7 @@ h2 {
 }
 p {
   color: lightblue;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .title {
   color: white;
@@ -214,35 +247,42 @@ p {
   color: white;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .stats_hp {
   color: red;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
 }
 .stats_phy {
   color: lightskyblue;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
 }
 
 .stats_mag {
   color: blue;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
 }
 
 .stats_spd {
   color: yellow;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
 }
 
 .stats_def {
   color: purple;
   font-size: 1.2rem;
   font-family: 'Cagliostro', sans-serif;
+  margin-left: 2rem;
 }
 
 /* image {

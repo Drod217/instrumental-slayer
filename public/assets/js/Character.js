@@ -27,29 +27,33 @@ Character.prototype.startingStats = function() {
 
 Character.prototype.classStats = function() {
   if(this.charClass === "mage") {
-    this.hp -= 10;
-    this.maxHp -= 10;
-    this.defense  -= 10;
-    this.speed += 5;
-    this.magic += 20;
+    this.hp -= 5;
+    this.maxHp -= 5;
+    this.defense  += 10;
+    this.speed += 20;
+    this.magic += 40;
     this.physical -= 10;
   } else if (this.charClass === "fighter") {
     this.hp += 20;
     this.maxHp += 20;
     this.defense += 10;
     this.speed += 5;
-    this.magic -= 15;
+    this.magic -= 20;
     this.physical += 15;
   } else if (this.class === "rogue" ) {
     this.hp -= 5;
     this.maxHp -= 5;
-    this.speed += 15;
+    this.defense += 10;
+    this.speed += 30;
     this.magic -= 5;
+    this.physical += 25;
   } else if (this.class === "cleric") {
     this.hp += 15;
-    this.maxHp += 15;
-    this.defense += 5;
-    this.magic += 12;
+    this.maxHp += 10;
+    this.defense += 15;
+    this.speed == 5;
+    this.magic += 10;
+    this.physical += 5;
   }
 
 }

@@ -36,9 +36,26 @@
 .buttonbox {
   margin-left: 10rem;
 }
+.roller {
+  width: 20rem;
+}
+.songz {
+  text-align: center;
+  font-size: 1.7rem;
+  color: orange;
+}
+.current-song {
+  text-align: center;
+  color: lightsalmon;
+}
+
+.current-char {
+  text-align: center;
+  color: lightseagreen;
+}
 
 .songbox {
-  margin-left: 3rem;
+  margin-left: 1rem;
   background: black;
   border-radius: 2rem;
   border: 0.2rem solid grey;

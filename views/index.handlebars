@@ -1,120 +1,122 @@
 <!--This will be our main screen to start the game-->
 <audio preload="auto" src="#"></audio>
 <div class="container">
-      <div class="notification">
-        <h1>Welcome to Instrumental Slayer</h1>
-        <h2>Choose your character and battle song, then prepare to fight!</h2>
-        <h2>Current song: <span class='current-song'></span></h2>
-        <h2>Current character: <span class='current-char'></span></h2>
-        <button class="button is-dark roll-stats roller">Roll Character!</button>
-      </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent is-vertical is-1">
+  <div class="notification">
+    <h1>Welcome to Instrumental Slayer</h1>
+    <h2>Choose your character and battle song, then prepare to fight!</h2>
+    <h2>Current song:
+      <span class='current-song'></span>
+    </h2>
+    <h2>Current character:
+      <span class='current-char'></span>
+    </h2>
+    <button class="button is-dark roll-stats roller">Roll Character!</button>
+  </div>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-12">
+      <div class="tile">
+        <div class="tile is-parent is-vertical is-1">
 
-            </div>
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child yellow_0 is-12 char-article" char-value="0" char-class="fighter">
-                <p class="yellow_1">Double Drop Marvin</p>
-                <figure class="image is-1by1 yellow_3">
-                  <img src="./assets/img/note_yellow.png">
-                </figure>
-                <p class="yellow_2">Uses Heavy Beats to demolish the enemy! (fighter)</p>
-              </article>
-              <article class="tile is-child blue_0 is-12 char-article" char-value="1" char-class="mage">
-                <p class="blue_1">Straight Edge Steve</p>
-                <figure class="image is-1by1 blue_3">
-                  <img src="./assets/img/note_blue.png">
-                </figure>
-                <p class="blue_2">Uses Mellow Keys to tranquilize the enemy! (mage)</p>
-              </article>
-            </div>
-            <div class="tile is-parent is-vertical middle">
-                <p class="songtitle">Pick your SONG to use in battle</p>
-                  <ul class="songlist">
-                    <li id="0">Mirrors</li>
-                    <li id="1">Grenade</li>
-                    <li id="2">John Cougar, John Deere, John</li>
-                    <li id="3">Look at Me Now</li>
-                    <li id="4">My Life</li>
-                    <li id="5">Started From The Bottom</li>
-                    <li id="6">Wake Me Up</li>
-                    <li id="7">I Don't Give A Fuck</li>
-                    <li id="8">Climax</li>
-                    <li id="9">Lucky</li>
-                    <li id="10">Lil Freak</li>
-                    <li id="11">Run This Town</li>
-                    <li id="12">Still D.R.E.</li>
-                    <li id="13">Who Says</li>
-                    <li id="14">Superstar</li>
-                    <li id="15">Before He Cheats</li>
-                    <li id="16">Like A Wrecking Ball</li>
-                    <li id="17">Not Afraid</li>
-                    <li id="18">Ordinary People</li>
-                    <li id="19">Tears In Heaven</li>
-                  </ul>
-            <div class="eq">
-             <div class="tile is-child box middle">
-             <p class="title">Battlefield</p>
-             <p>THIS IS WHERE ALL THE MUSICAL GRAPHIC JAZZ HAPPENS</p>
+        </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child yellow_0 is-12 char-article" char-value="0" char-class="fighter">
+            <p class="yellow_1">Double Drop Marvin</p>
+            <figure class="image is-1by1 yellow_3">
+              <img src="./assets/img/note_yellow.png">
+            </figure>
+            <p class="yellow_2">Uses Heavy Beats to demolish the enemy! (fighter)</p>
+          </article>
+          <article class="tile is-child blue_0 is-12 char-article" char-value="1" char-class="mage">
+            <p class="blue_1">Straight Edge Steve</p>
+            <figure class="image is-1by1 blue_3">
+              <img src="./assets/img/note_blue.png">
+            </figure>
+            <p class="blue_2">Uses Mellow Keys to tranquilize the enemy! (mage)</p>
+          </article>
+        </div>
+        <div class="tile is-parent is-vertical middle">
+          <p class="songtitle">Pick your SONG to use in battle</p>
+          <ul class="songlist">
+            <li id="0">Mirrors</li>
+            <li id="1">Grenade</li>
+            <li id="2">John Cougar, John Deere, John</li>
+            <li id="3">Look at Me Now</li>
+            <li id="4">My Life</li>
+            <li id="5">Started From The Bottom</li>
+            <li id="6">Wake Me Up</li>
+            <li id="7">I Don't Give A Fuck</li>
+            <li id="8">Climax</li>
+            <li id="9">Lucky</li>
+            <li id="10">Lil Freak</li>
+            <li id="11">Run This Town</li>
+            <li id="12">Still D.R.E.</li>
+            <li id="13">Who Says</li>
+            <li id="14">Superstar</li>
+            <li id="15">Before He Cheats</li>
+            <li id="16">Like A Wrecking Ball</li>
+            <li id="17">Not Afraid</li>
+            <li id="18">Ordinary People</li>
+            <li id="19">Tears In Heaven</li>
+          </ul>
+          <div class="eq">
+            <div class="tile is-child box middle">
+              <p class="title">Battlefield</p>
+              <p>THIS IS WHERE ALL THE MUSICAL GRAPHIC JAZZ HAPPENS</p>
               <div class="equalizer">
-                  <span class="column" id="purple"></span>
-                  <span class="column" id="blue"></span>
-                  <span class="column" id="cyan"></span>
-                  <span class="column" id="green"></span>
-                  <span class="column" id="yellow"></span>
-                  <span class="column" id="orange"></span>
-                  <span class="column" id="red"></span>
-                  <span id="black"></span>
-                  <br/>
-                  <input type="button" onclick="JavaScript: play();" value="Play" id=button>
+                <span class="column" id="purple"></span>
+                <span class="column" id="blue"></span>
+                <span class="column" id="cyan"></span>
+                <span class="column" id="green"></span>
+                <span class="column" id="yellow"></span>
+                <span class="column" id="orange"></span>
+                <span class="column" id="red"></span>
+                <span id="black"></span>
+                <br/>
+                <input type="button" onclick="JavaScript: play();" value="Play" id=button>
               </div>
             </div>
-            </div>
+          </div>
 
 
-            </div>
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child red_0 is-12 char-article" char-value="2" char-class="rogue">
-                <p class="red_1">Flashy Francine</p>
-                <figure class="image is-1by1 red_3">
-                  <img src="./assets/img/note_red.png">
-                </figure>
-                <p class="red_2">Uses Tempo to barrage the enemy! (rogue)</p>
-              </article>
-              <article class="tile is-child green_0 is-12 char-article" char-value="3" char-class="cleric">
-                <p class="green_1">Peeky Paula</p>
-                <figure class="image is-1by1 green_3">
-                  <img src="./assets/img/note_green.png">
-                </figure>
-                <p class="green_2">Uses Harmony to put down the enemy! (cleric)</p>
-              </article>
-            </div>
-            <div class="tile is-parent is-vertical is-1">
+        </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child red_0 is-12 char-article" char-value="2" char-class="rogue">
+            <p class="red_1">Flashy Francine</p>
+            <figure class="image is-1by1 red_3">
+              <img src="./assets/img/note_red.png">
+            </figure>
+            <p class="red_2">Uses Tempo to barrage the enemy! (rogue)</p>
+          </article>
+          <article class="tile is-child green_0 is-12 char-article" char-value="3" char-class="cleric">
+            <p class="green_1">Peeky Paula</p>
+            <figure class="image is-1by1 green_3">
+              <img src="./assets/img/note_green.png">
+            </figure>
+            <p class="green_2">Uses Harmony to put down the enemy! (cleric)</p>
+          </article>
+        </div>
+        <div class="tile is-parent is-vertical is-1">
 
-            </div>
+        </div>
 
-<audio id = "0" src = "assets/audio/09Mirrors.m4a"> </audio>
-<audio id = "1" src = "assets/audio/01Grenade.m4a"> </audio>
-<audio id = "2" src = "assets/audio/01JohnCougar,JohnDeere,John3_16.m4a"> </audio>
-<audio id = "3" src = "assets/audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a"> </audio>
-<audio id = "4" src = "assets/audio/01MyLife(feat.Eminem&AdamLevine).m4a"> </audio>
-<audio id = "5" src = "assets/audio/01StartedfromtheBottom.m4a"> </audio>
-<audio id = "6" src = "assets/audio/01WakeMeUp.m4a"> </audio>
-<audio id = "7" src = "assets/audio/1-04IDon'tFuckWithYou(feat.E-40).mp3"> </audio>
-<audio id = "8" src = "assets/audio/03Climax.m4a"> </audio>
-<audio id = "9" src = "assets/audio/03Lucky(feat.ColbieCaillat).m4a"> </audio>
-<audio id = "10" src = "assets/audio/04LilFreak(feat.NickiMinaj).m4a"> </audio>
-<audio id = "11" src = "assets/audio/04RunThisTown(feat.Rihanna&KanyeWest).m4a"> </audio>
-<audio id = "12" src = "assets/audio/04StillD.R.E.(feat.SnoopDogg).m4a"> </audio>
-<audio id = "13" src = "assets/audio/04WhoSays.m4a"> </audio>
-<audio id = "14" src = "assets/audio/05Superstar(feat.MatthewSantos).m4a"> </audio>
-<audio id = "15" src = "assets/audio/07BeforeHeCheats.m4a"> </audio>
+        <audio id="0" src="assets/audio/09Mirrors.m4a"> </audio>
+        <audio id="1" src="assets/audio/01Grenade.m4a"> </audio>
+        <audio id="2" src="assets/audio/01JohnCougar,JohnDeere,John3_16.m4a"> </audio>
+        <audio id="3" src="assets/audio/01LookAtMeNow(feat.LilWayne&BustaRhymes).m4a"> </audio>
+        <audio id="4" src="assets/audio/01MyLife(feat.Eminem&AdamLevine).m4a"> </audio>
+        <audio id="5" src="assets/audio/01StartedfromtheBottom.m4a"> </audio>
+        <audio id="6" src="assets/audio/01WakeMeUp.m4a"> </audio>
+        <audio id="8" src="assets/audio/03Climax.m4a"> </audio>
+        <audio id="9" src="assets/audio/03Lucky(feat.ColbieCaillat).m4a"> </audio>
+        <audio id="10" src="assets/audio/04LilFreak(feat.NickiMinaj).m4a"> </audio>
+        <audio id="11" src="assets/audio/04RunThisTown(feat.Rihanna&KanyeWest).m4a"> </audio>
+        <audio id="12" src="assets/audio/04StillD.R.E.(feat.SnoopDogg).m4a"> </audio>
+        <audio id="13" src="assets/audio/04WhoSays.m4a"> </audio>
+        <audio id="14" src="assets/audio/05Superstar(feat.MatthewSantos).m4a"> </audio>
+        <audio id="15" src="assets/audio/07BeforeHeCheats.m4a"> </audio>
 
 
-<audio id = "16" src = "assets/audio/07LikeaWreckingBall.m4a"> </audio>
-<audio id = "17" src = "assets/audio/07NotAfraid.m4a"> </audio>
-<audio id = "18" src = "assets/audio/08OrdinaryPeople.m4a"> </audio>
-<audio id = "19" src = "assets/audio/27TearsInHeaven.m4a"> </audio>
-
+        <audio id="16" src="assets/audio/07LikeaWreckingBall.m4a"> </audio>
+        <audio id="17" src="assets/audio/07NotAfraid.m4a"> </audio>
+        <audio id="18" src="assets/audio/08OrdinaryPeople.m4a"> </audio>
+        <audio id="19" src="assets/audio/27TearsInHeaven.m4a"> </audio>
